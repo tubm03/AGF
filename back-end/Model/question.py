@@ -5,6 +5,6 @@ class Question:
         self.type = ''
         self.heading = ''
         self.options = []
-        self.scale = ''
+        self.scale = []
         self.rows = []
         self.columns = []
