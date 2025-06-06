@@ -6,7 +6,6 @@ from google import genai
 class AIService:
     def __init__(self):
         self.api_key = settings.GEMINI_API_KEY
-        print(self.api_key)
         self.client = genai.Client(api_key=self.api_key)
         
         

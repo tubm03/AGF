@@ -1,0 +1,38 @@
+def start_fill_form(url, form, number_of_fill)
+    for index in range(number_of_fill):
+	back_up_form = copy(form)
+	driver = driver.get(url)
+	time.sleep(5)
+	print(f'Start fill form {idex + 1}')
+	for page in form.lists:
+            if len(qage.quesions) == 0:
+		continue
+	    page_element = driver.find_element(XPath, page.xpath)
+	    questions_element = page_element.find_elements('./div[@role='listitem']')
+	    questions = page.questions
+	    index = 0
+	    for question_element in questions_element:
+		for option in questions[index].options:
+		    if option.count > 0:
+			option_element = question_element.find_element(option.xpath)
+			if questions[index].type in ['Short answer', 'Paragraph']:
+			    option_element.send_key(option.label)
+		            time(0.5)
+			    
+			    
+			if questions[index].type in ['Multiple choice', '...', ...]:
+			    option_element.click()
+                        
+			option.count -= 1
+			if 'checkbox' not in option.xpath:
+			    break
+		    else:
+			continue
+	
+	    button = page.button
+	    button_element = driver.find_element(button.xpath)
+	    button_element.click()
+        driver.quit()
+	    
+
+	

@@ -5,3 +5,11 @@ class Option:
         self.label = ''
         self.percent = 0
         self.count = 0
+
+    def __json__(self):
+        return {
+            'xpath': self.xpath,
+            'label': self.label,
+            'percent': self.percent,
+            'count': self.count
+        }
