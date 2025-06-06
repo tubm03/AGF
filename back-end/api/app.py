@@ -1,43 +1,71 @@
-import os
-from services.browser_service import BrowserService
-from services.form_service import FormService
-from model.form import Form
 from flask import Flask, request, jsonify
-import json
+from flask_socketio import SocketIO, emit
+from flask_cors import CORS
+from datetime import datetime
 
 app = Flask(__name__)
+CORS(app)
+socketio = SocketIO(app, cors_allowed_origins="*")
 
-@app.route('/api/craw', methods=['POST'])
-def crawl_form():
-    url = request.json
-    
+# Cấu trúc dữ liệu tin nhắn
+messages = []
+typing_users = set()
 
+@app.route('/ping', methods=['GET'])
+def ping():
+    return jsonify({
+        "status": "success",
+        "message": "Backend is running",
+        "timestamp": datetime.now().isoformat()
+    })
 
-def create_app(test_config=None):
-    # create and configure the app
-    app = Flask(__name__, instance_relative_config=True)
-    app.config.from_mapping(
-        SECRET_KEY='dev',
-        DATABASE=os.path.join(app.instance_path, 'flaskr.sqlite'),
-    )
+@socketio.on('connect')
+def handle_connect():
+    print(f'Client connected: {request.sid}')
+    emit('messages', messages)
+    update_typing_status()
 
-    if test_config is None:
-        # load the instance config, if it exists, when not testing
-        app.config.from_pyfile('config.py', silent=True)
-    else:
-        # load the test config if passed in
-        app.config.from_mapping(test_config)
+@socketio.on('disconnect')
+def handle_disconnect():
+    print(f'Client disconnected: {request.sid}')
+    if request.sid in typing_users:
+        typing_users.remove(request.sid)
+        update_typing_status()
 
-    # ensure the instance folder exists
+@socketio.on('new_message')
+def handle_new_message(data):
     try:
-        os.makedirs(app.instance_path)
-    except OSError:
-        pass
+        message = {
+            'id': len(messages) + 1,
+            'text': data['text'],
+            'user': data['user'],
+            'timestamp': datetime.now().isoformat()
+        }
+        messages.append(message)
+        emit('new_message', message, broadcast=True)
+        
+        # Reset typing status
+        if request.sid in typing_users:
+            typing_users.remove(request.sid)
+            update_typing_status()
+            
+    except KeyError as e:
+        print(f"Invalid message format: {e}")
 
-    # a simple page that says hello
-    @app.route('/hello')
-    def hello():
-        return 'Hello, World!'
+@socketio.on('user_typing')
+def handle_user_typing(typing):
+    try:
+        if typing:
+            typing_users.add(request.sid)
+        elif request.sid in typing_users:
+            typing_users.remove(request.sid)
+        update_typing_status()
+    except Exception as e:
+        print(f"Typing error: {e}")
 
-    return app
+def update_typing_status():
+    is_typing = len(typing_users) > 0
+    emit('user_typing', is_typing, broadcast=True)
 
+if __name__ == '__main__':
+    socketio.run(app, host='0.0.0.0', port=5000, debug=True)
