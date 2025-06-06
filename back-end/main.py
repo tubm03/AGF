@@ -1,6 +1,6 @@
 from services.browser_service import BrowserService
 from services.form_service import FormService
-from Model.form import Form
+from model.form import Form
 import json
 
 def main():
@@ -11,7 +11,7 @@ def main():
     try:
         # Initialize services
         browser_service = BrowserService()
-        form = Form(url1)
+        form = Form(url2)
         form_service = FormService(form)
         
         # Get browser instance
@@ -27,7 +27,7 @@ def main():
 
     data = form.to_dict()
     json_data = json.dumps(data, indent=4)
-    with open('url1.json', 'w') as f:
+    with open('url2.json', 'w') as f:
         f.write(json_data)
     print(json_data)
 

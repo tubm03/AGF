@@ -1,5 +1,5 @@
 from selenium.webdriver.common.by import By
-from Model.question import Question
+from model.question import Question
 class ListQuestion:
     def __init__(self, element):
         self.element = element

@@ -25,6 +25,11 @@ class BrowserService:
         options.add_argument("--flag-switches-begin")
         options.add_argument("--flag-switches-end")
 
+        # chạy trong nền 
+        options.add_argument('--headless')  # Run in background
+        options.add_argument('--no-sandbox')
+        options.add_argument('--disable-dev-shm-usage')
+
         # Thiết lập profile
         options.add_argument("--user-data-dir=/tmp/chrome_profile")
         options.add_argument("--profile-directory=Default")

@@ -6,8 +6,8 @@
             "questions": [
                 {
                     "xpath": "./div[@role='listitem']",
-                    "type": "",
-                    "heading": "",
+                    "type": "Title",
+                    "heading": "Title",
                     "options": [],
                     "scale": [],
                     "rows": [],
@@ -15,98 +15,452 @@
                 },
                 {
                     "xpath": "./div[@role='listitem']",
-                    "type": "",
-                    "heading": "",
-                    "options": [],
+                    "type": "Short answer",
+                    "heading": "Short answer",
+                    "options": [
+                        {
+                            "xpath": ".//input[@type='text']",
+                            "label": "Your answer",
+                            "percent": 0,
+                            "count": 0
+                        }
+                    ],
                     "scale": [],
                     "rows": [],
                     "columns": []
                 },
                 {
                     "xpath": "./div[@role='listitem']",
-                    "type": "",
-                    "heading": "",
-                    "options": [],
+                    "type": "Paragraph",
+                    "heading": "Paragraph",
+                    "options": [
+                        {
+                            "xpath": ".//textarea",
+                            "label": "Your answer",
+                            "percent": 0,
+                            "count": 0
+                        }
+                    ],
                     "scale": [],
                     "rows": [],
                     "columns": []
                 },
                 {
                     "xpath": "./div[@role='listitem']",
-                    "type": "",
-                    "heading": "",
-                    "options": [],
+                    "type": "Multiple choice",
+                    "heading": "Multiple choice",
+                    "options": [
+                        {
+                            "xpath": ".//div[@role=\"radio\" and (contains(@data-value, \"Option 1\") or contains(@data-value, \"option 1\"))]",
+                            "label": "Option 1",
+                            "percent": 0,
+                            "count": 0
+                        },
+                        {
+                            "xpath": ".//div[@role=\"radio\" and (contains(@data-value, \"Option 2\") or contains(@data-value, \"option 2\"))]",
+                            "label": "Option 2",
+                            "percent": 0,
+                            "count": 0
+                        },
+                        {
+                            "xpath": ".//div[@role=\"radio\" and (contains(@data-value, \"Other\") or contains(@data-value, \"other\"))]",
+                            "label": "Other",
+                            "percent": 0,
+                            "count": 0
+                        },
+                        {
+                            "xpath": ".//input[@type='text']",
+                            "label": "__other_option__",
+                            "percent": 0,
+                            "count": 0
+                        }
+                    ],
                     "scale": [],
                     "rows": [],
                     "columns": []
                 },
                 {
                     "xpath": "./div[@role='listitem']",
-                    "type": "",
-                    "heading": "",
-                    "options": [],
+                    "type": "Checkboxes",
+                    "heading": "Checkboxes",
+                    "options": [
+                        {
+                            "xpath": ".//div[@role=\"checkbox\" and (contains(@data-answer-value, \"Option 1\") or contains(@data-answer-value, \"option 1\"))]",
+                            "label": "Option 1",
+                            "percent": 0,
+                            "count": 0
+                        },
+                        {
+                            "xpath": ".//div[@role=\"checkbox\" and (contains(@data-answer-value, \"Option 2\") or contains(@data-answer-value, \"option 2\"))]",
+                            "label": "Option 2",
+                            "percent": 0,
+                            "count": 0
+                        },
+                        {
+                            "xpath": ".//div[@role=\"checkbox\" and (contains(@data-answer-value, \"Other\") or contains(@data-answer-value, \"other\"))]",
+                            "label": "Other",
+                            "percent": 0,
+                            "count": 0
+                        },
+                        {
+                            "xpath": ".//input[@type='text']",
+                            "label": "__other_option__",
+                            "percent": 0,
+                            "count": 0
+                        }
+                    ],
                     "scale": [],
                     "rows": [],
                     "columns": []
                 },
                 {
                     "xpath": "./div[@role='listitem']",
-                    "type": "",
-                    "heading": "",
-                    "options": [],
+                    "type": "Drop-down",
+                    "heading": "Drop-down",
+                    "options": [
+                        {
+                            "xpath": ".//div[@role=\"option\" and contains(@data-value, \"Option 1\")]",
+                            "label": "Option 1",
+                            "percent": 0,
+                            "count": 0
+                        },
+                        {
+                            "xpath": ".//div[@role=\"option\" and contains(@data-value, \"Option 2\")]",
+                            "label": "Option 2",
+                            "percent": 0,
+                            "count": 0
+                        },
+                        {
+                            "xpath": ".//div[@role=\"option\" and contains(@data-value, \"Option 3\")]",
+                            "label": "Option 3",
+                            "percent": 0,
+                            "count": 0
+                        }
+                    ],
                     "scale": [],
                     "rows": [],
                     "columns": []
                 },
                 {
                     "xpath": "./div[@role='listitem']",
-                    "type": "",
-                    "heading": "",
-                    "options": [],
+                    "type": "Linear scale",
+                    "heading": "Linear scale",
+                    "options": [
+                        {
+                            "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"1\")]",
+                            "label": "1",
+                            "percent": 0,
+                            "count": 0
+                        },
+                        {
+                            "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"2\")]",
+                            "label": "2",
+                            "percent": 0,
+                            "count": 0
+                        },
+                        {
+                            "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"3\")]",
+                            "label": "3",
+                            "percent": 0,
+                            "count": 0
+                        },
+                        {
+                            "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"4\")]",
+                            "label": "4",
+                            "percent": 0,
+                            "count": 0
+                        },
+                        {
+                            "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"5\")]",
+                            "label": "5",
+                            "percent": 0,
+                            "count": 0
+                        }
+                    ],
                     "scale": [],
                     "rows": [],
                     "columns": []
                 },
                 {
                     "xpath": "./div[@role='listitem']",
-                    "type": "",
-                    "heading": "",
-                    "options": [],
+                    "type": "Rating",
+                    "heading": "Rating",
+                    "options": [
+                        {
+                            "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"1\")]",
+                            "label": "1",
+                            "percent": 0,
+                            "count": 0
+                        },
+                        {
+                            "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"2\")]",
+                            "label": "2",
+                            "percent": 0,
+                            "count": 0
+                        },
+                        {
+                            "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"3\")]",
+                            "label": "3",
+                            "percent": 0,
+                            "count": 0
+                        },
+                        {
+                            "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"4\")]",
+                            "label": "4",
+                            "percent": 0,
+                            "count": 0
+                        },
+                        {
+                            "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"5\")]",
+                            "label": "5",
+                            "percent": 0,
+                            "count": 0
+                        }
+                    ],
                     "scale": [],
                     "rows": [],
                     "columns": []
                 },
                 {
                     "xpath": "./div[@role='listitem']",
-                    "type": "",
-                    "heading": "",
-                    "options": [],
+                    "type": "Multiple-choice grid",
+                    "heading": "Multiple-choice grid",
+                    "options": [
+                        {
+                            "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"Row 1\") and contains(@aria-label, \"Column 1\")]",
+                            "label": "Row 1 - Column 1",
+                            "percent": 0,
+                            "count": 0
+                        },
+                        {
+                            "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"Row 1\") and contains(@aria-label, \"Column 2\")]",
+                            "label": "Row 1 - Column 2",
+                            "percent": 0,
+                            "count": 0
+                        },
+                        {
+                            "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"Row 1\") and contains(@aria-label, \"Column 3\")]",
+                            "label": "Row 1 - Column 3",
+                            "percent": 0,
+                            "count": 0
+                        },
+                        {
+                            "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"Row 1\") and contains(@aria-label, \"Column 4\")]",
+                            "label": "Row 1 - Column 4",
+                            "percent": 0,
+                            "count": 0
+                        },
+                        {
+                            "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"Row 1\") and contains(@aria-label, \"Column 5\")]",
+                            "label": "Row 1 - Column 5",
+                            "percent": 0,
+                            "count": 0
+                        },
+                        {
+                            "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"Row 2\") and contains(@aria-label, \"Column 1\")]",
+                            "label": "Row 2 - Column 1",
+                            "percent": 0,
+                            "count": 0
+                        },
+                        {
+                            "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"Row 2\") and contains(@aria-label, \"Column 2\")]",
+                            "label": "Row 2 - Column 2",
+                            "percent": 0,
+                            "count": 0
+                        },
+                        {
+                            "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"Row 2\") and contains(@aria-label, \"Column 3\")]",
+                            "label": "Row 2 - Column 3",
+                            "percent": 0,
+                            "count": 0
+                        },
+                        {
+                            "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"Row 2\") and contains(@aria-label, \"Column 4\")]",
+                            "label": "Row 2 - Column 4",
+                            "percent": 0,
+                            "count": 0
+                        },
+                        {
+                            "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"Row 2\") and contains(@aria-label, \"Column 5\")]",
+                            "label": "Row 2 - Column 5",
+                            "percent": 0,
+                            "count": 0
+                        },
+                        {
+                            "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"Row 3\") and contains(@aria-label, \"Column 1\")]",
+                            "label": "Row 3 - Column 1",
+                            "percent": 0,
+                            "count": 0
+                        },
+                        {
+                            "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"Row 3\") and contains(@aria-label, \"Column 2\")]",
+                            "label": "Row 3 - Column 2",
+                            "percent": 0,
+                            "count": 0
+                        },
+                        {
+                            "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"Row 3\") and contains(@aria-label, \"Column 3\")]",
+                            "label": "Row 3 - Column 3",
+                            "percent": 0,
+                            "count": 0
+                        },
+                        {
+                            "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"Row 3\") and contains(@aria-label, \"Column 4\")]",
+                            "label": "Row 3 - Column 4",
+                            "percent": 0,
+                            "count": 0
+                        },
+                        {
+                            "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"Row 3\") and contains(@aria-label, \"Column 5\")]",
+                            "label": "Row 3 - Column 5",
+                            "percent": 0,
+                            "count": 0
+                        }
+                    ],
+                    "scale": [],
+                    "rows": [
+                        "Row 1",
+                        "Row 2",
+                        "Row 3"
+                    ],
+                    "columns": [
+                        "Column 1",
+                        "Column 2",
+                        "Column 3",
+                        "Column 4",
+                        "Column 5"
+                    ]
+                },
+                {
+                    "xpath": "./div[@role='listitem']",
+                    "type": "Tick box grid",
+                    "heading": "Tick box grid",
+                    "options": [
+                        {
+                            "xpath": ".//div[@role=\"checkbox\" and contains(@aria-label, \"Row 1\") and contains(@aria-label, \"Column 1\")]",
+                            "label": "Row 1 - Column 1",
+                            "percent": 0,
+                            "count": 0
+                        },
+                        {
+                            "xpath": ".//div[@role=\"checkbox\" and contains(@aria-label, \"Row 1\") and contains(@aria-label, \"Column 2\")]",
+                            "label": "Row 1 - Column 2",
+                            "percent": 0,
+                            "count": 0
+                        },
+                        {
+                            "xpath": ".//div[@role=\"checkbox\" and contains(@aria-label, \"Row 1\") and contains(@aria-label, \"Column 3\")]",
+                            "label": "Row 1 - Column 3",
+                            "percent": 0,
+                            "count": 0
+                        },
+                        {
+                            "xpath": ".//div[@role=\"checkbox\" and contains(@aria-label, \"Row 1\") and contains(@aria-label, \"Column 4\")]",
+                            "label": "Row 1 - Column 4",
+                            "percent": 0,
+                            "count": 0
+                        },
+                        {
+                            "xpath": ".//div[@role=\"checkbox\" and contains(@aria-label, \"Row 1\") and contains(@aria-label, \"Column 5\")]",
+                            "label": "Row 1 - Column 5",
+                            "percent": 0,
+                            "count": 0
+                        },
+                        {
+                            "xpath": ".//div[@role=\"checkbox\" and contains(@aria-label, \"Row 2\") and contains(@aria-label, \"Column 1\")]",
+                            "label": "Row 2 - Column 1",
+                            "percent": 0,
+                            "count": 0
+                        },
+                        {
+                            "xpath": ".//div[@role=\"checkbox\" and contains(@aria-label, \"Row 2\") and contains(@aria-label, \"Column 2\")]",
+                            "label": "Row 2 - Column 2",
+                            "percent": 0,
+                            "count": 0
+                        },
+                        {
+                            "xpath": ".//div[@role=\"checkbox\" and contains(@aria-label, \"Row 2\") and contains(@aria-label, \"Column 3\")]",
+                            "label": "Row 2 - Column 3",
+                            "percent": 0,
+                            "count": 0
+                        },
+                        {
+                            "xpath": ".//div[@role=\"checkbox\" and contains(@aria-label, \"Row 2\") and contains(@aria-label, \"Column 4\")]",
+                            "label": "Row 2 - Column 4",
+                            "percent": 0,
+                            "count": 0
+                        },
+                        {
+                            "xpath": ".//div[@role=\"checkbox\" and contains(@aria-label, \"Row 2\") and contains(@aria-label, \"Column 5\")]",
+                            "label": "Row 2 - Column 5",
+                            "percent": 0,
+                            "count": 0
+                        },
+                        {
+                            "xpath": ".//div[@role=\"checkbox\" and contains(@aria-label, \"Row 3\") and contains(@aria-label, \"Column 1\")]",
+                            "label": "Row 3 - Column 1",
+                            "percent": 0,
+                            "count": 0
+                        },
+                        {
+                            "xpath": ".//div[@role=\"checkbox\" and contains(@aria-label, \"Row 3\") and contains(@aria-label, \"Column 2\")]",
+                            "label": "Row 3 - Column 2",
+                            "percent": 0,
+                            "count": 0
+                        },
+                        {
+                            "xpath": ".//div[@role=\"checkbox\" and contains(@aria-label, \"Row 3\") and contains(@aria-label, \"Column 3\")]",
+                            "label": "Row 3 - Column 3",
+                            "percent": 0,
+                            "count": 0
+                        },
+                        {
+                            "xpath": ".//div[@role=\"checkbox\" and contains(@aria-label, \"Row 3\") and contains(@aria-label, \"Column 4\")]",
+                            "label": "Row 3 - Column 4",
+                            "percent": 0,
+                            "count": 0
+                        },
+                        {
+                            "xpath": ".//div[@role=\"checkbox\" and contains(@aria-label, \"Row 3\") and contains(@aria-label, \"Column 5\")]",
+                            "label": "Row 3 - Column 5",
+                            "percent": 0,
+                            "count": 0
+                        }
+                    ],
+                    "scale": [],
+                    "rows": [
+                        "Row 1",
+                        "Row 2",
+                        "Row 3"
+                    ],
+                    "columns": [
+                        "Column 1",
+                        "Column 2",
+                        "Column 3",
+                        "Column 4",
+                        "Column 5"
+                    ]
+                },
+                {
+                    "xpath": "./div[@role='listitem']",
+                    "type": "Date",
+                    "heading": "Date",
+                    "options": [
+                        {
+                            "xpath": ".//input[@type='date']",
+                            "label": "input date",
+                            "percent": 0,
+                            "count": 0
+                        }
+                    ],
                     "scale": [],
                     "rows": [],
                     "columns": []
                 },
                 {
                     "xpath": "./div[@role='listitem']",
-                    "type": "",
-                    "heading": "",
-                    "options": [],
-                    "scale": [],
-                    "rows": [],
-                    "columns": []
-                },
-                {
-                    "xpath": "./div[@role='listitem']",
-                    "type": "",
-                    "heading": "",
-                    "options": [],
-                    "scale": [],
-                    "rows": [],
-                    "columns": []
-                },
-                {
-                    "xpath": "./div[@role='listitem']",
-                    "type": "",
-                    "heading": "",
+                    "type": "Time",
+                    "heading": "Time",
                     "options": [],
                     "scale": [],
                     "rows": [],

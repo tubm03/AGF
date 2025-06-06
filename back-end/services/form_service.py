@@ -1,18 +1,18 @@
 import time
-from Model.option import Option
+from model.option import Option
 from selenium.webdriver.common.by import By
-from Model.list_question import ListQuestion
-from Model.question import Question
+from model.list_question import ListQuestion
+from model.question import Question
 from services.ai_service import AIService
 from selenium.common.exceptions import WebDriverException
-from Model.button import Button
-from Model.form import Form
+from model.button import Button
+from model.form import Form
 class FormService:
     def __init__(self, form):
         self.driver = None
         self.form = form
 
-    def _restart_driver(self):
+    def restart_driver(self):
         """Restart the browser driver"""
         try:
             self.driver.quit()
