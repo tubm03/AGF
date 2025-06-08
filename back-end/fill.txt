@@ -1,0 +1,505 @@
+{
+  "lists": [
+    {
+      "button": {
+        "value": "Submit",
+        "xpath": "//div[@role='button' and contains(@aria-label, 'Submit')]"
+      },
+      "questions": [
+        {
+          "columns": [],
+          "heading": "Title",
+          "options": [],
+          "rows": [],
+          "scale": [],
+          "type": "Title",
+          "xpath": "./div[@role='listitem']"
+        },
+        {
+          "columns": [],
+          "heading": "Short answer",
+          "options": [
+            {
+              "count": 0,
+              "label": "Your answer",
+              "percent": 50,
+              "xpath": ".//input[@type='text']",
+              "value": "Short answer 1"
+            },
+            {
+              "label": "input date",
+              "percent": 50,
+              "count": 0,
+              "xpath": ".//input[@type='date']",
+              "value": "Short answer 2"
+            }
+          ],
+          "rows": [],
+          "scale": [],
+          "type": "Short answer",
+          "xpath": "./div[@role='listitem']"
+        },
+        {
+          "columns": [],
+          "heading": "Paragraph",
+          "options": [
+            {
+              "count": 0,
+              "label": "Your answer",
+              "percent": 100,
+              "xpath": ".//textarea",
+              "value": "Para "
+            }
+          ],
+          "rows": [],
+          "scale": [],
+          "type": "Paragraph",
+          "xpath": "./div[@role='listitem']"
+        },
+        {
+          "columns": [],
+          "heading": "Multiple choice",
+          "options": [
+            {
+              "count": 0,
+              "label": "Option 1",
+              "percent": 0,
+              "xpath": ".//div[@role=\"radio\" and (contains(@data-value, \"Option 1\") or contains(@data-value, \"option 1\"))]"
+            },
+            {
+              "count": 0,
+              "label": "Option 2",
+              "percent": 50,
+              "xpath": ".//div[@role=\"radio\" and (contains(@data-value, \"Option 2\") or contains(@data-value, \"option 2\"))]"
+            },
+            {
+              "count": 0,
+              "label": "__other_option__",
+              "percent": 50,
+              "xpath": ".//input[@type='text']",
+              "value": "Other multiple choice"
+            }
+          ],
+          "rows": [],
+          "scale": [],
+          "type": "Multiple choice",
+          "xpath": "./div[@role='listitem']"
+        },
+        {
+          "columns": [],
+          "heading": "Checkboxes",
+          "options": [
+            {
+              "count": 0,
+              "label": "Option 1",
+              "percent": 0,
+              "xpath": ".//div[@role=\"checkbox\" and (contains(@data-answer-value, \"Option 1\") or contains(@data-answer-value, \"option 1\"))]"
+            },
+            {
+              "count": 0,
+              "label": "Option 2",
+              "percent": 0,
+              "xpath": ".//div[@role=\"checkbox\" and (contains(@data-answer-value, \"Option 2\") or contains(@data-answer-value, \"option 2\"))]"
+            },
+            {
+              "count": 0,
+              "label": "__other_option__",
+              "percent": 50,
+              "xpath": ".//input[@type='text']",
+              "value": "other checkboxes 1"
+            },
+            {
+              "label": "__other_option__",
+              "percent": 50,
+              "count": 0,
+              "xpath": ".//input[@type='text']",
+              "value": "other checkboxes 2"
+            }
+          ],
+          "rows": [],
+          "scale": [],
+          "type": "Checkboxes",
+          "xpath": "./div[@role='listitem']"
+        },
+        {
+          "columns": [],
+          "heading": "Drop-down",
+          "options": [
+            {
+              "count": 0,
+              "label": "Option 1",
+              "percent": 50,
+              "xpath": ".//div[@role=\"option\" and contains(@data-value, \"Option 1\")]"
+            },
+            {
+              "count": 0,
+              "label": "Option 2",
+              "percent": 0,
+              "xpath": ".//div[@role=\"option\" and contains(@data-value, \"Option 2\")]"
+            },
+            {
+              "count": 0,
+              "label": "Option 3",
+              "percent": 50,
+              "xpath": ".//div[@role=\"option\" and contains(@data-value, \"Option 3\")]"
+            }
+          ],
+          "rows": [],
+          "scale": [],
+          "type": "Drop-down",
+          "xpath": "./div[@role='listitem']"
+        },
+        {
+          "columns": [],
+          "heading": "Linear scale",
+          "options": [
+            {
+              "count": 0,
+              "label": "1",
+              "percent": 0,
+              "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"1\")]"
+            },
+            {
+              "count": 0,
+              "label": "2",
+              "percent": 0,
+              "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"2\")]"
+            },
+            {
+              "count": 0,
+              "label": "3",
+              "percent": 0,
+              "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"3\")]"
+            },
+            {
+              "count": 0,
+              "label": "4",
+              "percent": 0,
+              "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"4\")]"
+            },
+            {
+              "count": 0,
+              "label": "5",
+              "percent": 100,
+              "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"5\")]"
+            }
+          ],
+          "rows": [],
+          "scale": [],
+          "type": "Linear scale",
+          "xpath": "./div[@role='listitem']"
+        },
+        {
+          "columns": [],
+          "heading": "Rating",
+          "options": [
+            {
+              "count": 0,
+              "label": "1",
+              "percent": 0,
+              "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"1\")]"
+            },
+            {
+              "count": 0,
+              "label": "2",
+              "percent": 0,
+              "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"2\")]"
+            },
+            {
+              "count": 0,
+              "label": "3",
+              "percent": 0,
+              "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"3\")]"
+            },
+            {
+              "count": 0,
+              "label": "4",
+              "percent": 50,
+              "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"4\")]"
+            },
+            {
+              "count": 0,
+              "label": "5",
+              "percent": 50,
+              "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"5\")]"
+            }
+          ],
+          "rows": [],
+          "scale": [],
+          "type": "Rating",
+          "xpath": "./div[@role='listitem']"
+        },
+        {
+          "columns": [
+            "Column 1",
+            "Column 2",
+            "Column 3",
+            "Column 4",
+            "Column 5"
+          ],
+          "heading": "Multiple-choice grid",
+          "options": [
+            {
+              "count": 0,
+              "label": "Row 1 - Column 1",
+              "percent": 100,
+              "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"Row 1\") and contains(@aria-label, \"Column 1\")]"
+            },
+            {
+              "count": 0,
+              "label": "Row 1 - Column 2",
+              "percent": 0,
+              "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"Row 1\") and contains(@aria-label, \"Column 2\")]"
+            },
+            {
+              "count": 0,
+              "label": "Row 1 - Column 3",
+              "percent": 0,
+              "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"Row 1\") and contains(@aria-label, \"Column 3\")]"
+            },
+            {
+              "count": 0,
+              "label": "Row 1 - Column 4",
+              "percent": 0,
+              "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"Row 1\") and contains(@aria-label, \"Column 4\")]"
+            },
+            {
+              "count": 0,
+              "label": "Row 1 - Column 5",
+              "percent": 0,
+              "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"Row 1\") and contains(@aria-label, \"Column 5\")]"
+            },
+            {
+              "count": 0,
+              "label": "Row 2 - Column 1",
+              "percent": 0,
+              "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"Row 2\") and contains(@aria-label, \"Column 1\")]"
+            },
+            {
+              "count": 0,
+              "label": "Row 2 - Column 2",
+              "percent": 100,
+              "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"Row 2\") and contains(@aria-label, \"Column 2\")]"
+            },
+            {
+              "count": 0,
+              "label": "Row 2 - Column 3",
+              "percent": 0,
+              "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"Row 2\") and contains(@aria-label, \"Column 3\")]"
+            },
+            {
+              "count": 0,
+              "label": "Row 2 - Column 4",
+              "percent": 0,
+              "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"Row 2\") and contains(@aria-label, \"Column 4\")]"
+            },
+            {
+              "count": 0,
+              "label": "Row 2 - Column 5",
+              "percent": 0,
+              "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"Row 2\") and contains(@aria-label, \"Column 5\")]"
+            },
+            {
+              "count": 0,
+              "label": "Row 3 - Column 1",
+              "percent": 0,
+              "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"Row 3\") and contains(@aria-label, \"Column 1\")]"
+            },
+            {
+              "count": 0,
+              "label": "Row 3 - Column 2",
+              "percent": 0,
+              "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"Row 3\") and contains(@aria-label, \"Column 2\")]"
+            },
+            {
+              "count": 0,
+              "label": "Row 3 - Column 3",
+              "percent": 0,
+              "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"Row 3\") and contains(@aria-label, \"Column 3\")]"
+            },
+            {
+              "count": 0,
+              "label": "Row 3 - Column 4",
+              "percent": 50,
+              "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"Row 3\") and contains(@aria-label, \"Column 4\")]"
+            },
+            {
+              "count": 0,
+              "label": "Row 3 - Column 5",
+              "percent": 50,
+              "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"Row 3\") and contains(@aria-label, \"Column 5\")]"
+            }
+          ],
+          "rows": [
+            "Row 1",
+            "Row 2",
+            "Row 3"
+          ],
+          "scale": [],
+          "type": "Multiple-choice grid",
+          "xpath": "./div[@role='listitem']"
+        },
+        {
+          "columns": [
+            "Column 1",
+            "Column 2",
+            "Column 3",
+            "Column 4",
+            "Column 5"
+          ],
+          "heading": "Tick box grid",
+          "options": [
+            {
+              "count": 0,
+              "label": "Row 1 - Column 1",
+              "percent": 100,
+              "xpath": ".//div[@role=\"checkbox\" and contains(@aria-label, \"Row 1\") and contains(@aria-label, \"Column 1\")]"
+            },
+            {
+              "count": 0,
+              "label": "Row 1 - Column 2",
+              "percent": 100,
+              "xpath": ".//div[@role=\"checkbox\" and contains(@aria-label, \"Row 1\") and contains(@aria-label, \"Column 2\")]"
+            },
+            {
+              "count": 0,
+              "label": "Row 1 - Column 3",
+              "percent": 100,
+              "xpath": ".//div[@role=\"checkbox\" and contains(@aria-label, \"Row 1\") and contains(@aria-label, \"Column 3\")]"
+            },
+            {
+              "count": 0,
+              "label": "Row 1 - Column 4",
+              "percent": 100,
+              "xpath": ".//div[@role=\"checkbox\" and contains(@aria-label, \"Row 1\") and contains(@aria-label, \"Column 4\")]"
+            },
+            {
+              "count": 0,
+              "label": "Row 1 - Column 5",
+              "percent": 100,
+              "xpath": ".//div[@role=\"checkbox\" and contains(@aria-label, \"Row 1\") and contains(@aria-label, \"Column 5\")]"
+            },
+            {
+              "count": 0,
+              "label": "Row 2 - Column 1",
+              "percent": 50,
+              "xpath": ".//div[@role=\"checkbox\" and contains(@aria-label, \"Row 2\") and contains(@aria-label, \"Column 1\")]"
+            },
+            {
+              "count": 0,
+              "label": "Row 2 - Column 2",
+              "percent": 0,
+              "xpath": ".//div[@role=\"checkbox\" and contains(@aria-label, \"Row 2\") and contains(@aria-label, \"Column 2\")]"
+            },
+            {
+              "count": 0,
+              "label": "Row 2 - Column 3",
+              "percent": 0,
+              "xpath": ".//div[@role=\"checkbox\" and contains(@aria-label, \"Row 2\") and contains(@aria-label, \"Column 3\")]"
+            },
+            {
+              "count": 0,
+              "label": "Row 2 - Column 4",
+              "percent": 50,
+              "xpath": ".//div[@role=\"checkbox\" and contains(@aria-label, \"Row 2\") and contains(@aria-label, \"Column 4\")]"
+            },
+            {
+              "count": 0,
+              "label": "Row 2 - Column 5",
+              "percent": 0,
+              "xpath": ".//div[@role=\"checkbox\" and contains(@aria-label, \"Row 2\") and contains(@aria-label, \"Column 5\")]"
+            },
+            {
+              "count": 0,
+              "label": "Row 3 - Column 1",
+              "percent": 0,
+              "xpath": ".//div[@role=\"checkbox\" and contains(@aria-label, \"Row 3\") and contains(@aria-label, \"Column 1\")]"
+            },
+            {
+              "count": 0,
+              "label": "Row 3 - Column 2",
+              "percent": 0,
+              "xpath": ".//div[@role=\"checkbox\" and contains(@aria-label, \"Row 3\") and contains(@aria-label, \"Column 2\")]"
+            },
+            {
+              "count": 0,
+              "label": "Row 3 - Column 3",
+              "percent": 50,
+              "xpath": ".//div[@role=\"checkbox\" and contains(@aria-label, \"Row 3\") and contains(@aria-label, \"Column 3\")]"
+            },
+            {
+              "count": 0,
+              "label": "Row 3 - Column 4",
+              "percent": 0,
+              "xpath": ".//div[@role=\"checkbox\" and contains(@aria-label, \"Row 3\") and contains(@aria-label, \"Column 4\")]"
+            },
+            {
+              "count": 0,
+              "label": "Row 3 - Column 5",
+              "percent": 60,
+              "xpath": ".//div[@role=\"checkbox\" and contains(@aria-label, \"Row 3\") and contains(@aria-label, \"Column 5\")]"
+            }
+          ],
+          "rows": [
+            "Row 1",
+            "Row 2",
+            "Row 3"
+          ],
+          "scale": [],
+          "type": "Tick box grid",
+          "xpath": "./div[@role='listitem']"
+        },
+        {
+          "columns": [],
+          "heading": "Date",
+          "options": [
+            {
+              "count": 0,
+              "label": "input date",
+              "percent": 50,
+              "xpath": ".//input[@type='date']",
+              "value": "2003-11-12"
+            },
+            {
+              "label": "input date",
+              "percent": 50,
+              "count": 0,
+              "xpath": ".//input[@type='date']",
+              "value": "2005-12-13"
+            }
+          ],
+          "rows": [],
+          "scale": [],
+          "type": "Date",
+          "xpath": "./div[@role='listitem']"
+        },
+        {
+          "columns": [],
+          "heading": "Time",
+          "options": [
+            {
+              "label": "input time",
+              "percent": 0,
+              "count": 0,
+              "xpath": ".//input[@type='time']",
+              "value": ""
+            },
+            {
+              "label": "input time",
+              "percent": 0,
+              "count": 0,
+              "xpath": ".//input[@type='time']",
+              "value": ""
+            }
+          ],
+          "rows": [],
+          "scale": [],
+          "type": "Time",
+          "xpath": "./div[@role='listitem']"
+        }
+      ],
+      "xpath": "//div[@role='list']"
+    }
+  ],
+  "url": "https://forms.gle/qFkBDjWP1HCVDM2V8"
+}

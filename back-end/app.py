@@ -1,15 +1,16 @@
-from services.browser_service import BrowserService
-from services.form_service import FormService
-from model.form import Form
+from flask import Flask, request, jsonify
+from flask_cors import CORS
 import json
+from types import SimpleNamespace
+
+from services.crawl_service import CrawlService
 from services.auto_fill_service import AutoFillService
 
-def main():
-    url1 = "https://forms.gle/LHPFYvz3M8Wjp9p37" # chuẩn
-    url2 = "https://forms.gle/kRrps3n2m5pLaPZP8" # khong có tiêu đề
-    url3 = "https://forms.gle/qFkBDjWP1HCVDM2V8" # test agf
-    url4 = "https://www.google.com/?hl=vi"
-    form_data = {
+# Initialize Flask app
+app = Flask(__name__)
+CORS(app, resources={r"/*": {"origins": "*"}})
+
+data = {
   "lists": [
     {
       "button": {
@@ -826,38 +827,51 @@ def main():
   ],
   "url": "https://forms.gle/kRrps3n2m5pLaPZP8"
 }
-    
-    number_of_fill = 2  # Number of times to fill the form
+@app.route('/api/health', methods=['GET'])
+def health_check():
+    """Health check endpoint to verify server status."""
+    return jsonify({"status": "Server is running"}), 200
 
+@app.route('/api/crawl', methods=['POST'])
+def crawl():
+    global data
+    """Endpoint to handle crawling requests."""
+    url = request.json.get('url')
+    
+    if not url:
+        return jsonify({"error": "URL is required"}), 400
+    
     try:
-        # Initialize services
-        browser_service = BrowserService()
-        driver = browser_service.get_driver()
-        driver.get(url4)
+        # Start the crawling process
+        crawl_service = CrawlService()
+        if data is None:
+            data = crawl_service.crawl(url)
+        return jsonify(data), 200
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+
+@app.route('/api/autofill', methods=['POST'])
+def autofill():
+    """Endpoint to handle auto-fill requests."""
+    form_data = request.json.get('formData')
+    number_of_fill = request.json.get('numberOfFill')
+    
+    if not form_data or not isinstance(number_of_fill, int):
+        return jsonify({"error": "Invalid form data or number of fills"}), 400
+    
+    try:
         auto_service = AutoFillService()
         auto_service.auto_fill(form_data,number_of_fill)
-    #     form = Form(url3)
-    #     form_service = FormService(form)
-        
-    #     # Get browser instance
-    #     driver = browser_service.get_driver()
-        
-    #     # Process form
-    #     form_service.process_form(driver)
-        
+        return jsonify({
+            "message": f"Auto-filled {number_of_fill} times",
+            "formData": form_data
+        }), 200
     except Exception as e:
-        print(f"An error occurred: {str(e)}")
-    finally:
-        print("Closing browser...")
+        print(f"An error occurred during auto-fill: {str(e)}")
+        return jsonify({"error": str(e)}), 500
 
-    # data = form.to_dict()
-    # json_data = json.dumps(data, indent=4)
-    # with open('url3.json', 'w') as f:
-    #     f.write(json_data)
-    # print(json_data)
+def dict_to_obj(d):
+    return json.loads(json.dumps(d), object_hook=lambda d: SimpleNamespace(**d))
 
-def get_form_data(url):
-    pass
-if __name__ == "__main__":
-    main()
-
+if __name__ == '__main__':
+    app.run(host='0.0.0.0', port=8000, debug=True,)

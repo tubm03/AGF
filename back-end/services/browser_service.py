@@ -11,6 +11,9 @@ class BrowserService:
         # Apply settings from config
         options.add_argument(f"--lang={settings.BROWSER_OPTIONS['language']}")
         options.add_argument(f"user-agent={settings.BROWSER_OPTIONS['user_agent']}")
+
+        options.add_argument('--no-first-run --no-service-autorun --password-store=basic')
+        options.add_argument("--incognito")
         
         # Thêm các tham số ẩn danh
         options.add_argument("--disable-blink-features=AutomationControlled")

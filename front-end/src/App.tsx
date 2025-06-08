@@ -1,12 +1,19 @@
-import Chat from "./components/Chat";
-import "./App.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./components/Home";
+import SurveyForm from "./components/SurveyForm";
+import { SurveyProvider } from "./context/SurveyContext";
 
 function App() {
   return (
-    <div className="App">
-      <h1>Realtime Chat (TypeScript)</h1>
-      <Chat />
-    </div>
+    <SurveyProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/survey" element={<SurveyForm />} />
+          <Route path="*" element={<div>404 Not Found</div>} />
+        </Routes>
+      </Router>
+    </SurveyProvider>
   );
 }
 

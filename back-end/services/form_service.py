@@ -26,14 +26,36 @@ class FormService:
 
     def add_option_multiple_choice(self, question, options):
         for op in options:
-            xpath = f'''.//div[@role="radio" and (contains(@data-value, "{op}") or contains(@data-value, "{op.lower().strip(":")}"))]'''
-            option = Option(question.element.find_element(By.XPATH, xpath))
-            option.xpath = xpath
-            time.sleep(0.5)
-            option.element.click()
-            option.label = op
-            question.options.append(option)
-            if "other" in op.lower():
+            try:
+                xpath = f'''.//div[@role="radio" and (contains(@data-value, "{op}") or contains(@data-value, "{op.lower().strip(":")}"))]'''
+                option = Option(question.element.find_element(By.XPATH, xpath))
+                option.xpath = xpath
+                time.sleep(0.5)
+                option.element.click()
+                option.label = op
+                question.options.append(option)
+                if "other" in op.lower():
+                    try:
+                        xpath = ".//input[@type='text']"
+                        input_element = question.element.find_element(By.XPATH, xpath)
+                        option = Option(input_element)
+                        option.xpath = xpath
+                        option.label = "__other_option__"
+                        input_element.clear()  # Clear any existing value
+                        input_element.send_keys('Test')
+                        time.sleep(1)
+                        question.options[len(question.options) -1 ] = option
+                    except WebDriverException as e:
+                        return
+                print(f"\t {option.label}: {option.xpath}")
+            except WebDriverException as e:
+                xpath = f'''.//div[@role="radio" and (contains(@data-value, "Other") or contains(@data-value, "other"))]'''
+                option = Option(question.element.find_element(By.XPATH, xpath))
+                option.xpath = xpath
+                time.sleep(0.5)
+                option.element.click()
+                option.label = op
+                question.options.append(option)
                 try:
                     xpath = ".//input[@type='text']"
                     input_element = question.element.find_element(By.XPATH, xpath)
@@ -43,20 +65,44 @@ class FormService:
                     input_element.clear()  # Clear any existing value
                     input_element.send_keys('Test')
                     time.sleep(1)
-                    question.options.append(option)
+                    question.options[len(question.options) -1 ] = option
+
                 except WebDriverException as e:
-                    return
+                    return   
+                print(f"\t {option.label}: {option.xpath}")     
             
     def add_option_checkboxes(self, question, options):
         for op in options:
-            xpath = f'''.//div[@role="checkbox" and (contains(@data-answer-value, "{op}") or contains(@data-answer-value, "{op.lower().strip(":")}"))]'''
-            option = Option(question.element.find_element(By.XPATH, xpath))
-            option.xpath = xpath
-            time.sleep(0.5)
-            option.element.click()
-            option.label = op
-            question.options.append(option)
-            if "other" in op.lower():
+            try: 
+                xpath = f'''.//div[@role="checkbox" and (contains(@data-answer-value, "{op}") or contains(@data-answer-value, "{op.lower().strip(":")}"))]'''
+                option = Option(question.element.find_element(By.XPATH, xpath))
+                option.xpath = xpath
+                time.sleep(0.5)
+                option.element.click()
+                option.label = op
+                question.options.append(option)
+                if "other" in op.lower():
+                    try:
+                        xpath = ".//input[@type='text']"
+                        input_element = question.element.find_element(By.XPATH, xpath)
+                        option = Option(input_element)
+                        option.xpath = xpath
+                        option.label = "__other_option__"
+                        input_element.clear()  # Clear any existing value
+                        input_element.send_keys('Test')
+                        time.sleep(1)
+                        question.options[len(question.options) -1 ] = option
+                    except WebDriverException as e:
+                        return
+                print(f"\t {option.label}: {option.xpath}")
+            except WebDriverException as e:
+                xpath = f'''.//div[@role="checkbox" and (contains(@data-answer-value, "Other") or contains(@data-answer-value, "other"))]'''
+                option = Option(question.element.find_element(By.XPATH, xpath))
+                option.xpath = xpath
+                time.sleep(0.5)
+                option.element.click()
+                option.label = op
+                question.options.append(option)
                 try:
                     xpath = ".//input[@type='text']"
                     input_element = question.element.find_element(By.XPATH, xpath)
@@ -66,23 +112,25 @@ class FormService:
                     input_element.clear()  # Clear any existing value
                     input_element.send_keys('Test')
                     time.sleep(1)
-                    question.options.append(option)
+                    question.options[len(question.options) -1 ] = option
                 except WebDriverException as e:
                     return
+                print(f"\t {option.label}: {option.xpath}")
             
     def add_option_dropdown(self, question, options):
-        time.sleep(1)
         presentation_element = question.element.find_element(By.XPATH, '''.//div[@role="presentation"]''')
         for op in options:
-            presentation_element.click()
             time.sleep(1)
+            presentation_element.click()
+            time.sleep(0.5)
             xpath = f'''.//div[@role="option" and contains(@data-value, "{op}")]'''
             option = Option(question.element.find_element(By.XPATH, xpath))
             option.xpath = xpath
-            time.sleep(0.5)
+            time.sleep(1)
             option.element.click()
             option.label = op
             question.options.append(option)
+            print(f"\t {option.label}: {option.xpath}")
 
     def add_option_linear_scale_or_rating(self, question, options):
         for op in options:
@@ -93,6 +141,7 @@ class FormService:
             option.element.click()
             option.label = op
             question.options.append(option)
+            print(f"\t {option.label}: {option.xpath}")
 
     def add_option_multiple_choice_grid(self, question, rows, columns):
         for row in rows:
@@ -104,6 +153,7 @@ class FormService:
                 option.element.click()
                 option.label = row + ' - ' + column
                 question.options.append(option)
+                print(f"\t {option.label}: {option.xpath}")
 
     def add_option_tick_box_grid(self, question, rows, columns):
         for row in rows:
@@ -115,6 +165,7 @@ class FormService:
                 option.element.click()
                 option.label = row + ' - ' + column
                 question.options.append(option)
+                print(f"\t {option.label}: {option.xpath}")
 
     def add_option_date(self, question):
         xpath = ".//input[@type='date']"
@@ -125,6 +176,7 @@ class FormService:
         option.element.send_keys('12/11/2003')
         option.label = 'input date'
         question.options.append(option)
+        print(f"\t {option.label}: {option.xpath}")
 
     def add_option_time(self, question):
         xpath_hour = ".//input[@type='text' and @max='12']"
@@ -151,8 +203,9 @@ class FormService:
         option.element.clear()  # Clear any existing value
         option.element.send_keys('Test')
         time.sleep(1)
-        option.label = "Your answer"
+        option.label = "text"
         question.options.append(option)
+        print(f"\t {option.label}: {option.xpath}")
 
     def add_option_paragraph(self, question):
         xpath = ".//textarea"
@@ -161,8 +214,9 @@ class FormService:
         option.element.clear()  # Clear any existing value
         option.element.send_keys('Test')
         time.sleep(1)
-        option.label = "Your answer"
+        option.label = "textarea"
         question.options.append(option)
+        print(f"\t {option.label}: {option.xpath}")
 
     def process_form(self, driver):
         self.driver = driver
@@ -180,6 +234,9 @@ class FormService:
                 summit_button_element = self.driver.find_element(By.XPATH, button_submit_xpath)
                 button = Button('Submit', button_submit_xpath)
                 self.form.lists[-1].button = button
+                print('--------------------------------')
+                print("Button: " + button.value)
+                print('--------------------------------')
                 #summit_button_element.click()
                 self.driver.quit()
             except WebDriverException:
@@ -198,6 +255,9 @@ class FormService:
                     button_next.click()
                     time.sleep(3)
                     page_number += 1
+                    print('--------------------------------')
+                    print("Button: " + button.value)
+                    print('--------------------------------')
                 except WebDriverException as e:
                     print(f"Error clicking next button: {e}")
                     is_next = False
@@ -252,7 +312,7 @@ class FormService:
 
         for i in range(len(result)):
             print(result[i])
-
+        print('-----------------------------------------------')
         retries = 0
         success = False
         while not success and retries < 3:
@@ -260,7 +320,7 @@ class FormService:
                 for i in range(len(result)):
                     list_question.questions[i].type = result[i]['type']
                     list_question.questions[i].heading = result[i]['heading']
-
+                    print(result[i]['heading'])
                     if result[i]['type'] == "Multiple choice":
                         time.sleep(0.5)
                         self.add_option_multiple_choice(list_question.questions[i], result[i]['options'])
