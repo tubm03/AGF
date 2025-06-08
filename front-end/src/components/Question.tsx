@@ -10,6 +10,7 @@ import TickBoxGridComponent from "./TickBoxGridComponent";
 import DateComponent from "./DateComponent";
 import TimeComponent from "./TimeComponent";
 import TextComponent from "./TextComponent";
+import "../styles/styles.css";
 
 interface Props {
   question: Question;
@@ -19,7 +20,7 @@ interface Props {
 
 const QuestionComponent = ({ question, questionId, listId }: Props) => {
   return (
-    <>
+    <div className="question">
       {question.type === "Title" && <TitleComponent question={question} />}
       {(question.type === "Short answer" || question.type === "Paragraph") && (
         <TextComponent
@@ -92,7 +93,7 @@ const QuestionComponent = ({ question, questionId, listId }: Props) => {
           question={question}
         />
       )}
-    </>
+    </div>
   );
 };
 

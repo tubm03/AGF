@@ -5,6 +5,7 @@ import { useSurveyContext } from "../context/SurveyContext";
 import React, { useState } from "react";
 import { API_URL } from "../../config/setting";
 import axios from "axios";
+import "../styles/styles.css";
 
 const SurveyForm: React.FC = () => {
   const navigate = useNavigate();
@@ -44,22 +45,22 @@ const SurveyForm: React.FC = () => {
   }
 
   return (
-    <div>
-      <h1>Page</h1>
+    <div className="container form-container">
+      <h1>Survey Form</h1>
       {formData.lists.map((list, index) => (
-        <div key={index}>
-          <h2>List question of page {index + 1}</h2>
+        <div key={index} className="form-container">
+          <h2>Page {index + 1}</h2>
           <ListQuestions list={list} listId={index} />
         </div>
       ))}
-      <div>
+      <div className="option-container">
+        Number of Auto Fill:
         <input
           type="number"
           value={numberOfFill}
           onChange={(e) => setNumberOfFill(Number(e.target.value))}
         ></input>
       </div>
-
       <button
         onClick={() => {
           console.log("Final form data:", formData);

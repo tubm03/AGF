@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./components/Home";
 import SurveyForm from "./components/SurveyForm";
 import { SurveyProvider } from "./context/SurveyContext";
+import "./styles/styles.css";
 
 function App() {
   return (

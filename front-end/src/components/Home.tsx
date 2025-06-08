@@ -3,6 +3,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 import { useSurveyContext } from "../context/SurveyContext";
+import "../styles/styles.css";
 
 const Home = () => {
   const { formData, setFormData } = useSurveyContext();
@@ -37,36 +38,37 @@ const Home = () => {
   return (
     <div className="container">
       <h1>Web Crawler</h1>
+      <div className="form-container">
+        <div className="option-container">
+          <input
+            type="text"
+            value={url}
+            onChange={(e) => setUrl(e.target.value)}
+            placeholder="Enter URL to crawl"
+            disabled={isLoading}
+          />
+          <button onClick={handleStartCrawl} disabled={isLoading || !url}>
+            {isLoading ? "Crawling..." : "Start Crawl"}
+          </button>
 
-      <div className="controls">
-        <input
-          type="text"
-          value={url}
-          onChange={(e) => setUrl(e.target.value)}
-          placeholder="Enter URL to crawl"
-          disabled={isLoading}
-        />
-        <button onClick={handleStartCrawl} disabled={isLoading || !url}>
-          {isLoading ? "Crawling..." : "Start Crawl"}
-        </button>
-
-        <button onClick={handleCheckServer}>Check Server Status</button>
-        <button onClick={() => navigate("/survey")}>Go to Form</button>
-      </div>
-
-      {isLoading && (
-        <div className="progress-container">
-          {/* <div className="progress-bar" style={{ width: `${progress}%` }}></div> */}
-          <div className="status">
-            {/* {statusMessage} ({progress}%) - Time elapsed: {timeElapsed} */}
-            <div className="loading-message">Crawling in progress...</div>
-          </div>
+          <button onClick={handleCheckServer}>Check Server Status</button>
+          <button onClick={() => navigate("/survey")}>Go to Form</button>
         </div>
-      )}
 
-      <div className="form-data">
-        <h2>Form Data</h2>
-        {formData && <pre>{JSON.stringify(formData, null, 2)}</pre>}
+        {isLoading && (
+          <div className="progress-container">
+            {/* <div className="progress-bar" style={{ width: `${progress}%` }}></div> */}
+            <div className="status">
+              {/* {statusMessage} ({progress}%) - Time elapsed: {timeElapsed} */}
+              <div className="loading-message">Crawling in progress...</div>
+            </div>
+          </div>
+        )}
+
+        <div className="form-data">
+          <h2>Form Data</h2>
+          {formData && <pre>{JSON.stringify(formData, null, 2)}</pre>}
+        </div>
       </div>
     </div>
   );
