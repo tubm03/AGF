@@ -226,7 +226,6 @@ class FormService:
         page_number = 1
         while is_next:
             print(f"Processing page {page_number}")
-
             self.get_list_question()
             time.sleep(2)
             try:
@@ -239,6 +238,7 @@ class FormService:
                 print('--------------------------------')
                 #summit_button_element.click()
                 self.driver.quit()
+                break
             except WebDriverException:
                 print("Submit button not found, continuing to next page.")
                 try:
@@ -247,7 +247,7 @@ class FormService:
 
                     button_next = button_element[0] if len(button_element) == 2 else button_element[1]
                     value = button_next.get_attribute('innerText')
-                    button_next_xpath = "//div[@role='button'][contains(., '{value}')]"
+                    button_next_xpath = f"//div[@role='button'][contains(., '{value}')]"
 
                     button = Button(value, button_next_xpath)
 
@@ -266,15 +266,9 @@ class FormService:
                     is_next = False
             except Exception as e:
                 print(f"Error getting button: {e}")
-                
-
-                
-        
         print("Finished processing all pages.")
-        
         print("Submitting the form...")
         
-
     def get_list_question(self):
         #get list question
         list_question = ListQuestion(self.driver.find_element(By.XPATH, "//div[@role='list']"))        

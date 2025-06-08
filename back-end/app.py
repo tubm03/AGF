@@ -14,56 +14,87 @@ data = {
   "lists": [
     {
       "button": {
-        "value": "Submit",
-        "xpath": "//div[@role='button' and contains(@aria-label, 'Submit')]"
+        "value": "Tiếp",
+        "xpath": "//div[@role='button'][contains(., 'Tiếp')]"
+      },
+      "questions": [],
+      "xpath": "//div[@role='list']"
+    },
+    {
+      "button": {
+        "value": "Tiếp",
+        "xpath": "//div[@role='button'][contains(., 'Tiếp')]"
       },
       "questions": [
         {
           "columns": [],
-          "heading": "Where are you from?",
-          "options": [
-            {
-              "count": 0,
-              "label": "Your answer",
-              "percent": 60,
-              "value": "Ha noi",
-              "xpath": ".//input[@type='text']"
-            },
-            {
-              "label": "input text",
-              "percent": 40,
-              "count": 0,
-              "xpath": ".//input[@type='text']",
-              "value": "Nam Dinh"
-            }
-          ],
+          "heading": "PERSONAL INFORMATION",
+          "options": [],
           "rows": [],
           "scale": [],
-          "type": "Short answer",
+          "type": "Title",
           "xpath": "./div[@role='listitem']"
         },
         {
           "columns": [],
-          "heading": "What is your age?",
+          "heading": "What is your gender?",
           "options": [
             {
               "count": 0,
-              "label": "18- 24",
-              "percent": 30,
+              "label": "Male",
+              "percent": 50,
               "value": "",
-              "xpath": ".//div[@role=\"radio\" and (contains(@data-value, \"18- 24\") or contains(@data-value, \"18- 24\"))]"
+              "xpath": ".//div[@role=\"radio\" and (contains(@data-value, \"Male\") or contains(@data-value, \"male\"))]"
+            },
+            {
+              "count": 0,
+              "label": "Female",
+              "percent": 0,
+              "value": "",
+              "xpath": ".//div[@role=\"radio\" and (contains(@data-value, \"Female\") or contains(@data-value, \"female\"))]"
+            },
+            {
+              "count": 0,
+              "label": "Khác",
+              "percent": 50,
+              "value": "",
+              "xpath": ".//div[@role=\"radio\" and (contains(@data-value, \"Khác\") or contains(@data-value, \"khác\"))]"
+            }
+          ],
+          "rows": [],
+          "scale": [],
+          "type": "Multiple choice",
+          "xpath": "./div[@role='listitem']"
+        },
+        {
+          "columns": [],
+          "heading": "What is your age? ",
+          "options": [
+            {
+              "count": 0,
+              "label": "Under 18",
+              "percent": 0,
+              "value": "",
+              "xpath": ".//div[@role=\"radio\" and (contains(@data-value, \"Under 18\") or contains(@data-value, \"under 18\"))]"
+            },
+            {
+              "count": 0,
+              "label": "18 - 24",
+              "percent": 0,
+              "value": "",
+              "xpath": ".//div[@role=\"radio\" and (contains(@data-value, \"18 - 24\") or contains(@data-value, \"18 - 24\"))]"
             },
             {
               "count": 0,
               "label": "25 - 34",
-              "percent": 50,
+              "percent": 100,
               "value": "",
               "xpath": ".//div[@role=\"radio\" and (contains(@data-value, \"25 - 34\") or contains(@data-value, \"25 - 34\"))]"
             },
             {
               "count": 0,
               "label": "Above 35",
-              "percent": 20,
+              "percent": 0,
               "value": "",
               "xpath": ".//div[@role=\"radio\" and (contains(@data-value, \"Above 35\") or contains(@data-value, \"above 35\"))]"
             }
@@ -75,28 +106,119 @@ data = {
         },
         {
           "columns": [],
-          "heading": "What is your gender?",
+          "heading": "Where you from ? ",
           "options": [
             {
               "count": 0,
-              "label": "Male",
-              "percent": 70,
-              "value": "",
-              "xpath": ".//div[@role=\"radio\" and (contains(@data-value, \"Male\") or contains(@data-value, \"male\"))]"
-            },
-            {
-              "count": 0,
-              "label": "Female",
-              "percent": 30,
-              "value": "",
-              "xpath": ".//div[@role=\"radio\" and (contains(@data-value, \"Female\") or contains(@data-value, \"female\"))]"
-            },
-            {
-              "count": 0,
-              "label": "Other",
+              "label": "USA",
               "percent": 0,
               "value": "",
-              "xpath": ".//div[@role=\"radio\" and (contains(@data-value, \"Other\") or contains(@data-value, \"other\"))]"
+              "xpath": ".//div[@role=\"radio\" and (contains(@data-value, \"USA\") or contains(@data-value, \"usa\"))]"
+            },
+            {
+              "count": 0,
+              "label": "Canada",
+              "percent": 0,
+              "value": "",
+              "xpath": ".//div[@role=\"radio\" and (contains(@data-value, \"Canada\") or contains(@data-value, \"canada\"))]"
+            },
+            {
+              "count": 0,
+              "label": "France",
+              "percent": 0,
+              "value": "",
+              "xpath": ".//div[@role=\"radio\" and (contains(@data-value, \"France\") or contains(@data-value, \"france\"))]"
+            },
+            {
+              "count": 0,
+              "label": "Germany",
+              "percent": 0,
+              "value": "",
+              "xpath": ".//div[@role=\"radio\" and (contains(@data-value, \"Germany\") or contains(@data-value, \"germany\"))]"
+            },
+            {
+              "count": 0,
+              "label": "Italy",
+              "percent": 0,
+              "value": "",
+              "xpath": ".//div[@role=\"radio\" and (contains(@data-value, \"Italy\") or contains(@data-value, \"italy\"))]"
+            },
+            {
+              "count": 0,
+              "label": "Spain",
+              "percent": 0,
+              "value": "",
+              "xpath": ".//div[@role=\"radio\" and (contains(@data-value, \"Spain\") or contains(@data-value, \"spain\"))]"
+            },
+            {
+              "count": 0,
+              "label": "United Kingdom",
+              "percent": 0,
+              "value": "",
+              "xpath": ".//div[@role=\"radio\" and (contains(@data-value, \"United Kingdom\") or contains(@data-value, \"united kingdom\"))]"
+            },
+            {
+              "count": 0,
+              "label": "Netherlands",
+              "percent": 0,
+              "value": "",
+              "xpath": ".//div[@role=\"radio\" and (contains(@data-value, \"Netherlands\") or contains(@data-value, \"netherlands\"))]"
+            },
+            {
+              "count": 0,
+              "label": "New Zealand",
+              "percent": 0,
+              "value": "",
+              "xpath": ".//div[@role=\"radio\" and (contains(@data-value, \"New Zealand\") or contains(@data-value, \"new zealand\"))]"
+            },
+            {
+              "count": 0,
+              "label": "Singapore",
+              "percent": 0,
+              "value": "",
+              "xpath": ".//div[@role=\"radio\" and (contains(@data-value, \"Singapore\") or contains(@data-value, \"singapore\"))]"
+            },
+            {
+              "count": 0,
+              "label": "Japan",
+              "percent": 0,
+              "value": "",
+              "xpath": ".//div[@role=\"radio\" and (contains(@data-value, \"Japan\") or contains(@data-value, \"japan\"))]"
+            },
+            {
+              "count": 0,
+              "label": "South Korea",
+              "percent": 0,
+              "value": "",
+              "xpath": ".//div[@role=\"radio\" and (contains(@data-value, \"South Korea\") or contains(@data-value, \"south korea\"))]"
+            },
+            {
+              "count": 0,
+              "label": "China",
+              "percent": 0,
+              "value": "",
+              "xpath": ".//div[@role=\"radio\" and (contains(@data-value, \"China\") or contains(@data-value, \"china\"))]"
+            },
+            {
+              "count": 0,
+              "label": "Thailand",
+              "percent": 0,
+              "value": "",
+              "xpath": ".//div[@role=\"radio\" and (contains(@data-value, \"Thailand\") or contains(@data-value, \"thailand\"))]"
+            },
+            {
+              "count": 0,
+              "label": "Malaysia",
+              "percent": 0,
+              "value": "",
+              "xpath": ".//div[@role=\"radio\" and (contains(@data-value, \"Malaysia\") or contains(@data-value, \"malaysia\"))]"
+            },
+            {
+              "count": 0,
+              "label": "__other_option__",
+              "percent": 100,
+              "value": "Việt Nam",
+              "xpath": ".//input[@type='text']"
             }
           ],
           "rows": [],
@@ -117,24 +239,17 @@ data = {
             },
             {
               "count": 0,
-              "label": "1 - 3 years",
+              "label": "1- 3 year",
               "percent": 0,
               "value": "",
-              "xpath": ".//div[@role=\"radio\" and (contains(@data-value, \"1 - 3 years\") or contains(@data-value, \"1 - 3 years\"))]"
+              "xpath": ".//div[@role=\"radio\" and (contains(@data-value, \"1- 3 year\") or contains(@data-value, \"1- 3 year\"))]"
             },
             {
               "count": 0,
-              "label": "> 3 years",
-              "percent": 90,
+              "label": "> 3 year",
+              "percent": 100,
               "value": "",
-              "xpath": ".//div[@role=\"radio\" and (contains(@data-value, \"> 3 years\") or contains(@data-value, \"> 3 years\"))]"
-            },
-            {
-              "count": 0,
-              "label": "__other_option__",
-              "percent": 10,
-              "value": "5 month",
-              "xpath": ".//input[@type='text']"
+              "xpath": ".//div[@role=\"radio\" and (contains(@data-value, \"> 3 year\") or contains(@data-value, \"> 3 year\"))]"
             }
           ],
           "rows": [],
@@ -144,35 +259,35 @@ data = {
         },
         {
           "columns": [],
-          "heading": "Do you use eco-friendly products like biodegradable plates or bowls?",
+          "heading": "What is your current occupation?",
           "options": [
             {
               "count": 0,
-              "label": "Daily",
-              "percent": 70,
-              "value": "",
-              "xpath": ".//div[@role=\"radio\" and (contains(@data-value, \"Daily\") or contains(@data-value, \"daily\"))]"
-            },
-            {
-              "count": 0,
-              "label": "Weekly",
+              "label": "Student",
               "percent": 0,
               "value": "",
-              "xpath": ".//div[@role=\"radio\" and (contains(@data-value, \"Weekly\") or contains(@data-value, \"weekly\"))]"
+              "xpath": ".//div[@role=\"radio\" and (contains(@data-value, \"Student\") or contains(@data-value, \"student\"))]"
             },
             {
               "count": 0,
-              "label": "Occasionally (events, parties...)",
-              "percent": 30,
-              "value": "",
-              "xpath": ".//div[@role=\"radio\" and (contains(@data-value, \"Occasionally (events, parties...)\") or contains(@data-value, \"occasionally (events, parties...)\"))]"
-            },
-            {
-              "count": 0,
-              "label": "Rarely or never",
+              "label": "Office staff",
               "percent": 0,
               "value": "",
-              "xpath": ".//div[@role=\"radio\" and (contains(@data-value, \"Rarely or never\") or contains(@data-value, \"rarely or never\"))]"
+              "xpath": ".//div[@role=\"radio\" and (contains(@data-value, \"Office staff\") or contains(@data-value, \"office staff\"))]"
+            },
+            {
+              "count": 0,
+              "label": "Self-employed/Business",
+              "percent": 100,
+              "value": "",
+              "xpath": ".//div[@role=\"radio\" and (contains(@data-value, \"Self-employed/Business\") or contains(@data-value, \"self-employed/business\"))]"
+            },
+            {
+              "count": 0,
+              "label": "Other",
+              "percent": 0,
+              "value": "",
+              "xpath": ".//div[@role=\"radio\" and (contains(@data-value, \"Other\") or contains(@data-value, \"other\"))]"
             }
           ],
           "rows": [],
@@ -182,45 +297,7 @@ data = {
         },
         {
           "columns": [],
-          "heading": "Which of the following disposable products do you usually use?",
-          "options": [
-            {
-              "count": 0,
-              "label": "Plastic plates/bowls",
-              "percent": 60,
-              "value": "",
-              "xpath": ".//div[@role=\"radio\" and (contains(@data-value, \"Plastic plates/bowls\") or contains(@data-value, \"plastic plates/bowls\"))]"
-            },
-            {
-              "count": 0,
-              "label": "Paper plates/bowls",
-              "percent": 30,
-              "value": "",
-              "xpath": ".//div[@role=\"radio\" and (contains(@data-value, \"Paper plates/bowls\") or contains(@data-value, \"paper plates/bowls\"))]"
-            },
-            {
-              "count": 0,
-              "label": "Plates/bowls made from natural materials (leaves, bamboo, areca spathe, etc.)",
-              "percent": 10,
-              "value": "",
-              "xpath": ".//div[@role=\"radio\" and (contains(@data-value, \"Plates/bowls made from natural materials (leaves, bamboo, areca spathe, etc.)\") or contains(@data-value, \"plates/bowls made from natural materials (leaves, bamboo, areca spathe, etc.)\"))]"
-            },
-            {
-              "count": 0,
-              "label": "__other_option__",
-              "percent": 0,
-              "value": "",
-              "xpath": ".//input[@type='text']"
-            }
-          ],
-          "rows": [],
-          "scale": [],
-          "type": "Multiple choice",
-          "xpath": "./div[@role='listitem']"
-        },
-        {
-          "columns": [],
-          "heading": "Have you ever heard of disposable tableware products made from  areca spathe?",
+          "heading": "Have you ever used or heard of a biodegradable batch bowl?",
           "options": [
             {
               "count": 0,
@@ -241,324 +318,70 @@ data = {
           "scale": [],
           "type": "Multiple choice",
           "xpath": "./div[@role='listitem']"
-        },
+        }
+      ],
+      "xpath": "//div[@role='list']"
+    },
+    {
+      "button": {
+        "value": "Tiếp",
+        "xpath": "//div[@role='button'][contains(., 'Tiếp')]"
+      },
+      "questions": [
         {
-          "columns": [
-            "Strongly disagree",
-            "Disagree",
-            "Neutral",
-            "Agree",
-            "Strongly agree"
-          ],
-          "heading": "What do you think about tableware products made from areca spathe? ",
-          "options": [
-            {
-              "count": 0,
-              "label": "Do you find the product attractive - Strongly disagree",
-              "percent": 0,
-              "value": "",
-              "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"Do you find the product attractive\") and contains(@aria-label, \"Strongly disagree\")]"
-            },
-            {
-              "count": 0,
-              "label": "Do you find the product attractive - Disagree",
-              "percent": 0,
-              "value": "",
-              "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"Do you find the product attractive\") and contains(@aria-label, \"Disagree\")]"
-            },
-            {
-              "count": 0,
-              "label": "Do you find the product attractive - Neutral",
-              "percent": 10,
-              "value": "",
-              "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"Do you find the product attractive\") and contains(@aria-label, \"Neutral\")]"
-            },
-            {
-              "count": 0,
-              "label": "Do you find the product attractive - Agree",
-              "percent": 20,
-              "value": "",
-              "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"Do you find the product attractive\") and contains(@aria-label, \"Agree\")]"
-            },
-            {
-              "count": 0,
-              "label": "Do you find the product attractive - Strongly agree",
-              "percent": 70,
-              "value": "",
-              "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"Do you find the product attractive\") and contains(@aria-label, \"Strongly agree\")]"
-            },
-            {
-              "count": 0,
-              "label": "The product can replace conventional disks and plastic products. - Strongly disagree",
-              "percent": 0,
-              "value": "",
-              "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"The product can replace conventional disks and plastic products.\") and contains(@aria-label, \"Strongly disagree\")]"
-            },
-            {
-              "count": 0,
-              "label": "The product can replace conventional disks and plastic products. - Disagree",
-              "percent": 0,
-              "value": "",
-              "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"The product can replace conventional disks and plastic products.\") and contains(@aria-label, \"Disagree\")]"
-            },
-            {
-              "count": 0,
-              "label": "The product can replace conventional disks and plastic products. - Neutral",
-              "percent": 100,
-              "value": "",
-              "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"The product can replace conventional disks and plastic products.\") and contains(@aria-label, \"Neutral\")]"
-            },
-            {
-              "count": 0,
-              "label": "The product can replace conventional disks and plastic products. - Agree",
-              "percent": 0,
-              "value": "",
-              "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"The product can replace conventional disks and plastic products.\") and contains(@aria-label, \"Agree\")]"
-            },
-            {
-              "count": 0,
-              "label": "The product can replace conventional disks and plastic products. - Strongly agree",
-              "percent": 0,
-              "value": "",
-              "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"The product can replace conventional disks and plastic products.\") and contains(@aria-label, \"Strongly agree\")]"
-            },
-            {
-              "count": 0,
-              "label": "You feel that areca bowls and plates are suitable for the green living trend and environmental protection. - Strongly disagree",
-              "percent": 0,
-              "value": "",
-              "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"You feel that areca bowls and plates are suitable for the green living trend and environmental protection.\") and contains(@aria-label, \"Strongly disagree\")]"
-            },
-            {
-              "count": 0,
-              "label": "You feel that areca bowls and plates are suitable for the green living trend and environmental protection. - Disagree",
-              "percent": 0,
-              "value": "",
-              "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"You feel that areca bowls and plates are suitable for the green living trend and environmental protection.\") and contains(@aria-label, \"Disagree\")]"
-            },
-            {
-              "count": 0,
-              "label": "You feel that areca bowls and plates are suitable for the green living trend and environmental protection. - Neutral",
-              "percent": 0,
-              "value": "",
-              "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"You feel that areca bowls and plates are suitable for the green living trend and environmental protection.\") and contains(@aria-label, \"Neutral\")]"
-            },
-            {
-              "count": 0,
-              "label": "You feel that areca bowls and plates are suitable for the green living trend and environmental protection. - Agree",
-              "percent": 0,
-              "value": "",
-              "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"You feel that areca bowls and plates are suitable for the green living trend and environmental protection.\") and contains(@aria-label, \"Agree\")]"
-            },
-            {
-              "count": 0,
-              "label": "You feel that areca bowls and plates are suitable for the green living trend and environmental protection. - Strongly agree",
-              "percent": 100,
-              "value": "",
-              "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"You feel that areca bowls and plates are suitable for the green living trend and environmental protection.\") and contains(@aria-label, \"Strongly agree\")]"
-            }
-          ],
-          "rows": [
-            "Do you find the product attractive",
-            "The product can replace conventional disks and plastic products.",
-            "You feel that areca bowls and plates are suitable for the green living trend and environmental protection."
-          ],
+          "columns": [],
+          "heading": " CONSUMER BEHAVIOR ",
+          "options": [],
+          "rows": [],
           "scale": [],
-          "type": "Multiple-choice grid",
-          "xpath": "./div[@role='listitem']"
-        },
-        {
-          "columns": [
-            "1",
-            "2",
-            "3",
-            "4"
-          ],
-          "heading": "Please select all your learning schedule",
-          "options": [
-            {
-              "count": 0,
-              "label": "Monday - 1",
-              "percent": 0,
-              "value": "",
-              "xpath": ".//div[@role=\"checkbox\" and contains(@aria-label, \"Monday\") and contains(@aria-label, \"1\")]"
-            },
-            {
-              "count": 0,
-              "label": "Monday - 2",
-              "percent": 0,
-              "value": "",
-              "xpath": ".//div[@role=\"checkbox\" and contains(@aria-label, \"Monday\") and contains(@aria-label, \"2\")]"
-            },
-            {
-              "count": 0,
-              "label": "Monday - 3",
-              "percent": 70,
-              "value": "",
-              "xpath": ".//div[@role=\"checkbox\" and contains(@aria-label, \"Monday\") and contains(@aria-label, \"3\")]"
-            },
-            {
-              "count": 0,
-              "label": "Monday - 4",
-              "percent": 50,
-              "value": "",
-              "xpath": ".//div[@role=\"checkbox\" and contains(@aria-label, \"Monday\") and contains(@aria-label, \"4\")]"
-            },
-            {
-              "count": 0,
-              "label": "Tuesday - 1",
-              "percent": 0,
-              "value": "",
-              "xpath": ".//div[@role=\"checkbox\" and contains(@aria-label, \"Tuesday\") and contains(@aria-label, \"1\")]"
-            },
-            {
-              "count": 0,
-              "label": "Tuesday - 2",
-              "percent": 0,
-              "value": "",
-              "xpath": ".//div[@role=\"checkbox\" and contains(@aria-label, \"Tuesday\") and contains(@aria-label, \"2\")]"
-            },
-            {
-              "count": 0,
-              "label": "Tuesday - 3",
-              "percent": 80,
-              "value": "",
-              "xpath": ".//div[@role=\"checkbox\" and contains(@aria-label, \"Tuesday\") and contains(@aria-label, \"3\")]"
-            },
-            {
-              "count": 0,
-              "label": "Tuesday - 4",
-              "percent": 90,
-              "value": "",
-              "xpath": ".//div[@role=\"checkbox\" and contains(@aria-label, \"Tuesday\") and contains(@aria-label, \"4\")]"
-            },
-            {
-              "count": 0,
-              "label": "Wenesday - 1",
-              "percent": 50,
-              "value": "",
-              "xpath": ".//div[@role=\"checkbox\" and contains(@aria-label, \"Wenesday\") and contains(@aria-label, \"1\")]"
-            },
-            {
-              "count": 0,
-              "label": "Wenesday - 2",
-              "percent": 60,
-              "value": "",
-              "xpath": ".//div[@role=\"checkbox\" and contains(@aria-label, \"Wenesday\") and contains(@aria-label, \"2\")]"
-            },
-            {
-              "count": 0,
-              "label": "Wenesday - 3",
-              "percent": 60,
-              "value": "",
-              "xpath": ".//div[@role=\"checkbox\" and contains(@aria-label, \"Wenesday\") and contains(@aria-label, \"3\")]"
-            },
-            {
-              "count": 0,
-              "label": "Wenesday - 4",
-              "percent": 100,
-              "value": "",
-              "xpath": ".//div[@role=\"checkbox\" and contains(@aria-label, \"Wenesday\") and contains(@aria-label, \"4\")]"
-            },
-            {
-              "count": 0,
-              "label": "Thursday - 1",
-              "percent": 80,
-              "value": "",
-              "xpath": ".//div[@role=\"checkbox\" and contains(@aria-label, \"Thursday\") and contains(@aria-label, \"1\")]"
-            },
-            {
-              "count": 0,
-              "label": "Thursday - 2",
-              "percent": 30,
-              "value": "",
-              "xpath": ".//div[@role=\"checkbox\" and contains(@aria-label, \"Thursday\") and contains(@aria-label, \"2\")]"
-            },
-            {
-              "count": 0,
-              "label": "Thursday - 3",
-              "percent": 0,
-              "value": "",
-              "xpath": ".//div[@role=\"checkbox\" and contains(@aria-label, \"Thursday\") and contains(@aria-label, \"3\")]"
-            },
-            {
-              "count": 0,
-              "label": "Thursday - 4",
-              "percent": 0,
-              "value": "",
-              "xpath": ".//div[@role=\"checkbox\" and contains(@aria-label, \"Thursday\") and contains(@aria-label, \"4\")]"
-            },
-            {
-              "count": 0,
-              "label": "Friday - 1",
-              "percent": 100,
-              "value": "",
-              "xpath": ".//div[@role=\"checkbox\" and contains(@aria-label, \"Friday\") and contains(@aria-label, \"1\")]"
-            },
-            {
-              "count": 0,
-              "label": "Friday - 2",
-              "percent": 0,
-              "value": "",
-              "xpath": ".//div[@role=\"checkbox\" and contains(@aria-label, \"Friday\") and contains(@aria-label, \"2\")]"
-            },
-            {
-              "count": 0,
-              "label": "Friday - 3",
-              "percent": 0,
-              "value": "",
-              "xpath": ".//div[@role=\"checkbox\" and contains(@aria-label, \"Friday\") and contains(@aria-label, \"3\")]"
-            },
-            {
-              "count": 0,
-              "label": "Friday - 4",
-              "percent": 0,
-              "value": "",
-              "xpath": ".//div[@role=\"checkbox\" and contains(@aria-label, \"Friday\") and contains(@aria-label, \"4\")]"
-            }
-          ],
-          "rows": [
-            "Monday",
-            "Tuesday",
-            "Wenesday",
-            "Thursday",
-            "Friday"
-          ],
-          "scale": [],
-          "type": "Tick box grid",
+          "type": "Title",
           "xpath": "./div[@role='listitem']"
         },
         {
           "columns": [],
-          "heading": "Do you have any concerns when using dishes made from areca spathe?",
+          "heading": "What do you think of when you heard of a <span>biodegradable areca palm bowl</span>?",
           "options": [
             {
               "count": 0,
-              "label": "Durability",
-              "percent": 70,
-              "value": "",
-              "xpath": ".//div[@role=\"checkbox\" and (contains(@data-answer-value, \"Durability\") or contains(@data-answer-value, \"durability\"))]"
-            },
-            {
-              "count": 0,
-              "label": "Price",
-              "percent": 80,
-              "value": "",
-              "xpath": ".//div[@role=\"checkbox\" and (contains(@data-answer-value, \"Price\") or contains(@data-answer-value, \"price\"))]"
-            },
-            {
-              "count": 0,
-              "label": "Health safety",
+              "label": "Environmentally friendly, nature-friendly",
               "percent": 100,
               "value": "",
-              "xpath": ".//div[@role=\"checkbox\" and (contains(@data-answer-value, \"Health safety\") or contains(@data-answer-value, \"health safety\"))]"
+              "xpath": ".//div[@role=\"checkbox\" and (contains(@data-answer-value, \"Environmentally friendly, nature-friendly\") or contains(@data-answer-value, \"environmentally friendly, nature-friendly\"))]"
             },
             {
               "count": 0,
-              "label": "__other_option__",
+              "label": "Perishable, not durable",
               "percent": 0,
               "value": "",
-              "xpath": ".//input[@type='text']"
+              "xpath": ".//div[@role=\"checkbox\" and (contains(@data-answer-value, \"Perishable, not durable\") or contains(@data-answer-value, \"perishable, not durable\"))]"
+            },
+            {
+              "count": 0,
+              "label": "Product for single use only",
+              "percent": 0,
+              "value": "",
+              "xpath": ".//div[@role=\"checkbox\" and (contains(@data-answer-value, \"Product for single use only\") or contains(@data-answer-value, \"product for single use only\"))]"
+            },
+            {
+              "count": 0,
+              "label": "More expensive than conventional product",
+              "percent": 100,
+              "value": "",
+              "xpath": ".//div[@role=\"checkbox\" and (contains(@data-answer-value, \"More expensive than conventional product\") or contains(@data-answer-value, \"more expensive than conventional product\"))]"
+            },
+            {
+              "count": 0,
+              "label": "Vgreen Kombucha",
+              "percent": 50,
+              "value": "",
+              "xpath": ".//div[@role=\"checkbox\" and (contains(@data-answer-value, \"Vgreen Kombucha\") or contains(@data-answer-value, \"vgreen kombucha\"))]"
+            },
+            {
+              "count": 0,
+              "label": "Other",
+              "percent": 0,
+              "value": "",
+              "xpath": ".//div[@role=\"checkbox\" and (contains(@data-answer-value, \"Other\") or contains(@data-answer-value, \"other\"))]"
             }
           ],
           "rows": [],
@@ -568,35 +391,87 @@ data = {
         },
         {
           "columns": [],
-          "heading": "In what context would you consider using areca spathe products?",
+          "heading": "When do you think this product is suitable for use? ",
           "options": [
             {
               "count": 0,
-              "label": "Travel, picnic",
-              "percent": 70,
+              "label": "Picnic",
+              "percent": 50,
               "value": "",
-              "xpath": ".//div[@role=\"checkbox\" and (contains(@data-answer-value, \"Travel, picnic\") or contains(@data-answer-value, \"travel, picnic\"))]"
+              "xpath": ".//div[@role=\"radio\" and (contains(@data-value, \"Picnic\") or contains(@data-value, \"picnic\"))]"
             },
             {
               "count": 0,
-              "label": "Restaurant/cafe",
-              "percent": 10,
+              "label": "Home party",
+              "percent": 50,
               "value": "",
-              "xpath": ".//div[@role=\"checkbox\" and (contains(@data-answer-value, \"Restaurant/cafe\") or contains(@data-answer-value, \"restaurant/cafe\"))]"
+              "xpath": ".//div[@role=\"radio\" and (contains(@data-value, \"Home party\") or contains(@data-value, \"home party\"))]"
             },
             {
               "count": 0,
-              "label": "Everyday at home",
-              "percent": 30,
-              "value": "",
-              "xpath": ".//div[@role=\"checkbox\" and (contains(@data-answer-value, \"Everyday at home\") or contains(@data-answer-value, \"everyday at home\"))]"
-            },
-            {
-              "count": 0,
-              "label": "I don't care",
+              "label": "Green gift",
               "percent": 0,
               "value": "",
-              "xpath": ".//div[@role=\"checkbox\" and (contains(@data-answer-value, \"I don't care\") or contains(@data-answer-value, \"i don't care\"))]"
+              "xpath": ".//div[@role=\"radio\" and (contains(@data-value, \"Green gift\") or contains(@data-value, \"green gift\"))]"
+            },
+            {
+              "count": 0,
+              "label": "Use in homestay, resort",
+              "percent": 0,
+              "value": "",
+              "xpath": ".//div[@role=\"radio\" and (contains(@data-value, \"Use in homestay, resort\") or contains(@data-value, \"use in homestay, resort\"))]"
+            },
+            {
+              "count": 0,
+              "label": "Not suitable",
+              "percent": 0,
+              "value": "",
+              "xpath": ".//div[@role=\"radio\" and (contains(@data-value, \"Not suitable\") or contains(@data-value, \"not suitable\"))]"
+            }
+          ],
+          "rows": [],
+          "scale": [],
+          "type": "Multiple choice",
+          "xpath": "./div[@role='listitem']"
+        },
+        {
+          "columns": [],
+          "heading": "Do you have any concerns about using this type? ",
+          "options": [
+            {
+              "count": 0,
+              "label": "Not sure if it's food-safe",
+              "percent": 100,
+              "value": "",
+              "xpath": ".//div[@role=\"checkbox\" and (contains(@data-answer-value, \"Not sure if it's food-safe\") or contains(@data-answer-value, \"not sure if it's food-safe\"))]"
+            },
+            {
+              "count": 0,
+              "label": "Not durable, easily breaks or leaks",
+              "percent": 50,
+              "value": "",
+              "xpath": ".//div[@role=\"checkbox\" and (contains(@data-answer-value, \"Not durable, easily breaks or leaks\") or contains(@data-answer-value, \"not durable, easily breaks or leaks\"))]"
+            },
+            {
+              "count": 0,
+              "label": "More expensive than regular tableware",
+              "percent": 50,
+              "value": "",
+              "xpath": ".//div[@role=\"checkbox\" and (contains(@data-answer-value, \"More expensive than regular tableware\") or contains(@data-answer-value, \"more expensive than regular tableware\"))]"
+            },
+            {
+              "count": 0,
+              "label": "Not widely available",
+              "percent": 0,
+              "value": "",
+              "xpath": ".//div[@role=\"checkbox\" and (contains(@data-answer-value, \"Not widely available\") or contains(@data-answer-value, \"not widely available\"))]"
+            },
+            {
+              "count": 0,
+              "label": "Other",
+              "percent": 0,
+              "value": "",
+              "xpath": ".//div[@role=\"checkbox\" and (contains(@data-answer-value, \"Other\") or contains(@data-answer-value, \"other\"))]"
             }
           ],
           "rows": [],
@@ -606,28 +481,28 @@ data = {
         },
         {
           "columns": [],
-          "heading": "Are you willing to pay more for environmentally and health-friendly products?",
+          "heading": "Would you be willing to try a bowl/plate product made from 100% areca leaf spathe – environmentally friendly, no chemicals, no microplastics ?",
           "options": [
             {
               "count": 0,
-              "label": "Yes",
-              "percent": 60,
+              "label": "Yes, if it is easy to buy and reasonably priced",
+              "percent": 100,
               "value": "",
-              "xpath": ".//div[@role=\"radio\" and (contains(@data-value, \"Yes\") or contains(@data-value, \"yes\"))]"
+              "xpath": ".//div[@role=\"radio\" and (contains(@data-value, \"Yes, if it is easy to buy and reasonably priced\") or contains(@data-value, \"yes, if it is easy to buy and reasonably priced\"))]"
             },
             {
               "count": 0,
-              "label": "No",
-              "percent": 10,
+              "label": "Maybe, if there is a promotion/trial",
+              "percent": 0,
               "value": "",
-              "xpath": ".//div[@role=\"radio\" and (contains(@data-value, \"No\") or contains(@data-value, \"no\"))]"
+              "xpath": ".//div[@role=\"radio\" and (contains(@data-value, \"Maybe, if there is a promotion/trial\") or contains(@data-value, \"maybe, if there is a promotion/trial\"))]"
             },
             {
               "count": 0,
-              "label": "Depends on the quality",
-              "percent": 30,
+              "label": "No, I am not interested",
+              "percent": 0,
               "value": "",
-              "xpath": ".//div[@role=\"radio\" and (contains(@data-value, \"Depends on the quality\") or contains(@data-value, \"depends on the quality\"))]"
+              "xpath": ".//div[@role=\"radio\" and (contains(@data-value, \"No, I am not interested\") or contains(@data-value, \"no, i am not interested\"))]"
             }
           ],
           "rows": [],
@@ -637,195 +512,103 @@ data = {
         },
         {
           "columns": [],
-          "heading": "Do you feel this product is suitable in the country you live in?",
+          "heading": "If this product were available at the following places, where would be the most convenient for you to buy it in Vietnam? \n<p></p>",
           "options": [
             {
               "count": 0,
-              "label": "Your answer",
-              "percent": 100,
-              "value": "yes",
-              "xpath": ".//input[@type='text']"
-            }
-          ],
-          "rows": [],
-          "scale": [],
-          "type": "Short answer",
-          "xpath": "./div[@role='listitem']"
-        },
-        {
-          "columns": [],
-          "heading": "Would you be willing to try this product if given the chance?",
-          "options": [
-            {
-              "count": 0,
-              "label": "Yes",
+              "label": "Online platforms (TikTok, Shopee, Lazada, etc.)",
               "percent": 100,
               "value": "",
-              "xpath": ".//div[@role=\"radio\" and (contains(@data-value, \"Yes\") or contains(@data-value, \"yes\"))]"
+              "xpath": ".//div[@role=\"checkbox\" and (contains(@data-answer-value, \"Online platforms (TikTok, Shopee, Lazada, etc.)\") or contains(@data-answer-value, \"online platforms (tiktok, shopee, lazada, etc.)\"))]"
             },
             {
               "count": 0,
-              "label": "No",
-              "percent": 0,
-              "value": "",
-              "xpath": ".//div[@role=\"radio\" and (contains(@data-value, \"No\") or contains(@data-value, \"no\"))]"
-            }
-          ],
-          "rows": [],
-          "scale": [],
-          "type": "Multiple choice",
-          "xpath": "./div[@role='listitem']"
-        },
-        {
-          "columns": [],
-          "heading": "Bạn có sẵn sàng trải nghiệm thử sản phẩm khi chúng tôi mở bán không?",
-          "options": [
-            {
-              "count": 0,
-              "label": "1",
-              "percent": 0,
-              "value": "",
-              "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"1\")]"
-            },
-            {
-              "count": 0,
-              "label": "2",
-              "percent": 0,
-              "value": "",
-              "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"2\")]"
-            },
-            {
-              "count": 0,
-              "label": "3",
-              "percent": 0,
-              "value": "",
-              "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"3\")]"
-            },
-            {
-              "count": 0,
-              "label": "4",
-              "percent": 10,
-              "value": "",
-              "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"4\")]"
-            },
-            {
-              "count": 0,
-              "label": "5",
-              "percent": 90,
-              "value": "",
-              "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"5\")]"
-            }
-          ],
-          "rows": [],
-          "scale": [],
-          "type": "Linear scale",
-          "xpath": "./div[@role='listitem']"
-        },
-        {
-          "columns": [],
-          "heading": "您如何評價這次填表體驗？",
-          "options": [
-            {
-              "count": 0,
-              "label": "1",
-              "percent": 0,
-              "value": "",
-              "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"1\")]"
-            },
-            {
-              "count": 0,
-              "label": "2",
-              "percent": 0,
-              "value": "",
-              "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"2\")]"
-            },
-            {
-              "count": 0,
-              "label": "3",
-              "percent": 0,
-              "value": "",
-              "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"3\")]"
-            },
-            {
-              "count": 0,
-              "label": "4",
-              "percent": 0,
-              "value": "",
-              "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"4\")]"
-            },
-            {
-              "count": 0,
-              "label": "5",
-              "percent": 100,
-              "value": "",
-              "xpath": ".//div[@role=\"radio\" and contains(@aria-label, \"5\")]"
-            }
-          ],
-          "rows": [],
-          "scale": [],
-          "type": "Rating",
-          "xpath": "./div[@role='listitem']"
-        },
-        {
-          "columns": [],
-          "heading": "Quando você planeja viajar?",
-          "options": [
-            {
-              "count": 0,
-              "label": "input date",
-              "percent": 20,
-              "value": "2025-06-14",
-              "xpath": ".//input[@type='date']"
-            },
-            {
-              "label": "input date",
-              "percent": 30,
-              "count": 0,
-              "xpath": ".//input[@type='date']",
-              "value": "2025-06-12"
-            },
-            {
-              "label": "input date",
+              "label": "Facebook community groups",
               "percent": 50,
+              "value": "",
+              "xpath": ".//div[@role=\"checkbox\" and (contains(@data-answer-value, \"Facebook community groups\") or contains(@data-answer-value, \"facebook community groups\"))]"
+            },
+            {
               "count": 0,
-              "xpath": ".//input[@type='date']",
-              "value": "2025-05-29"
+              "label": "Supermarkets",
+              "percent": 0,
+              "value": "",
+              "xpath": ".//div[@role=\"checkbox\" and (contains(@data-answer-value, \"Supermarkets\") or contains(@data-answer-value, \"supermarkets\"))]"
+            },
+            {
+              "count": 0,
+              "label": "Local markets / Convenience stores",
+              "percent": 0,
+              "value": "",
+              "xpath": ".//div[@role=\"checkbox\" and (contains(@data-answer-value, \"Local markets / Convenience stores\") or contains(@data-answer-value, \"local markets / convenience stores\"))]"
+            },
+            {
+              "count": 0,
+              "label": "Eco-friendly specialty stores",
+              "percent": 50,
+              "value": "",
+              "xpath": ".//div[@role=\"checkbox\" and (contains(@data-answer-value, \"Eco-friendly specialty stores\") or contains(@data-answer-value, \"eco-friendly specialty stores\"))]"
+            },
+            {
+              "count": 0,
+              "label": "Fairs or exhibitions",
+              "percent": 0,
+              "value": "",
+              "xpath": ".//div[@role=\"checkbox\" and (contains(@data-answer-value, \"Fairs or exhibitions\") or contains(@data-answer-value, \"fairs or exhibitions\"))]"
+            },
+            {
+              "count": 0,
+              "label": "Other",
+              "percent": 0,
+              "value": "",
+              "xpath": ".//div[@role=\"checkbox\" and (contains(@data-answer-value, \"Other\") or contains(@data-answer-value, \"other\"))]"
             }
           ],
           "rows": [],
           "scale": [],
-          "type": "Date",
+          "type": "Checkboxes",
+          "xpath": "./div[@role='listitem']"
+        }
+      ],
+      "xpath": "//div[@role='list']"
+    },
+    {
+      "button": {
+        "value": "Submit",
+        "xpath": "//div[@role='button' and contains(@aria-label, 'Submit')]"
+      },
+      "questions": [
+        {
+          "columns": [],
+          "heading": "THANK YOU 💖",
+          "options": [],
+          "rows": [],
+          "scale": [],
+          "type": "Title",
           "xpath": "./div[@role='listitem']"
         },
         {
           "columns": [],
-          "heading": "Che ore sono nella tua zona adesso?",
+          "heading": "If you have any additional sharing or contributions, do not hesitate to leave a comment below!",
           "options": [
             {
-              "label": "input time",
-              "percent": 0,
               "count": 0,
-              "xpath": ".//input[@type='time']",
-              "value": ""
-            },
-            {
-              "label": "input time",
+              "label": "textarea",
               "percent": 0,
-              "count": 0,
-              "xpath": ".//input[@type='time']",
-              "value": ""
+              "value": "",
+              "xpath": ".//textarea"
             }
           ],
           "rows": [],
           "scale": [],
-          "type": "Time",
+          "type": "Paragraph",
           "xpath": "./div[@role='listitem']"
         }
       ],
       "xpath": "//div[@role='list']"
     }
   ],
-  "url": "https://forms.gle/kRrps3n2m5pLaPZP8"
+  "url": "https://forms.gle/LHPFYvz3M8Wjp9p37"
 }
 @app.route('/api/health', methods=['GET'])
 def health_check():

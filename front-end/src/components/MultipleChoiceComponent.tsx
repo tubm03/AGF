@@ -82,6 +82,7 @@ const MultipleChoiceComponent = ({ question, listId, questionId }: Props) => {
                 listId={listId}
                 questionId={questionId}
                 optionId={validOptions.length + index}
+                option={option}
               />
             ))}
           </div>

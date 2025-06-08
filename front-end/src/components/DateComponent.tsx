@@ -36,6 +36,7 @@ const DateComponent = ({ listId, questionId, question }: Props) => {
             listId={listId}
             questionId={questionId}
             optionId={index}
+            option={option}
           ></InputDateComponent>
         ))}
       </div>

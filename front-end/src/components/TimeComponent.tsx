@@ -36,6 +36,7 @@ const TimeComponent = ({ listId, questionId, question }: Props) => {
             listId={listId}
             questionId={questionId}
             optionId={index}
+            option={option}
           ></InputTimeComponent>
         ))}
       </div>

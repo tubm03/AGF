@@ -36,6 +36,7 @@ const TextComponent = ({ listId, questionId, question }: Props) => {
             listId={listId}
             questionId={questionId}
             optionId={index}
+            option={option}
           ></InputTextComponent>
         ))}
       </div>

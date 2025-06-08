@@ -8,6 +8,8 @@ class AutoFillService:
     def __init__(self):
         self.form_data = {}
         self.number_of_fill = 0
+        self.time_start = time.time()
+        self.time_end = 0
 
     def _prepare_form_data(self):
         print("Preparing form data for auto-fill...")
@@ -23,16 +25,16 @@ class AutoFillService:
         self._prepare_form_data()
         try:
             while self.number_of_fill > 0:
-                print("Config browser")
-                browser_service = BrowserService()
-                driver = browser_service.get_driver()
-                print("Open browser: " + self.form_data['url'])
-                driver.get(self.form_data['url'])
-                time.sleep(3)
-                print(f"Starting auto-fill for {self.number_of_fill} times...  " + time.strftime("%H:%M:%S", time.localtime()))
                 retries = 0
                 while retries < 3:
                     try:
+                        print("Config browser")
+                        browser_service = BrowserService()
+                        driver = browser_service.get_driver()
+                        print("Open browser: " + self.form_data['url'])
+                        driver.get(self.form_data['url'])
+                        time.sleep(2)
+                        print(f"Starting auto-fill for {self.number_of_fill} times...  " + time.strftime("%H:%M:%S", time.localtime()))
                         self._fill_form(driver)
                         break
                     except WebDriverException as e:
@@ -43,12 +45,12 @@ class AutoFillService:
                         print(f"An unexpected error occurred: {str(e)}. Retrying...")
                         retries += 1
                         time.sleep(2)
-                
-                time.sleep(3)
                 driver.quit()
                 os.system("taskkill /f /im chromedriver.exe")
                 self.number_of_fill -= 1
-
+            print("Auto-fill completed successfully." + time.strftime("%H:%M:%S", time.localtime()))
+            self.time_end = time.time()
+            print(f"Total time taken {self.time_start} - {self.time_end}: {self.time_end - self.time_start:.2f} seconds")
         except Exception as e:
             print(f"An error occurred during auto-fill: {str(e)}")
         finally:
@@ -58,20 +60,24 @@ class AutoFillService:
         try:
             backup_data = self.form_data.copy()
             for list in backup_data['lists']:
-                if len(list['questions']) == 0:
-                    continue
                 list_element = driver.find_element(By.XPATH, list['xpath'])
+                if len(list['questions']) == 0:
+                    print('-----------------------------------------------')
+                    print(f"Moving to next page")
+                    print('-----------------------------------------------')
+                    button_element = list_element.find_element(By.XPATH, list['button']['xpath'])
+                    button_element.click()
+                    time.sleep(1)
+                    continue
                 question_elements = list_element.find_elements(By.XPATH, "./div[@role='listitem']")
                 questions = list['questions']
                 for question_element, question in zip(question_elements, questions):
-                    time.sleep(0.5)
                     if len(questions) <= 0:
                         break
                     question['element'] = question_element
                     self._fill_question(question)
                 button_element = list_element.find_element(By.XPATH, list['button']['xpath'])
                 button_element.click()
-                time.sleep(2)
                 if list['button']['value'] == "Submit":
                     print('-----------------------------------------------')
                     print("Form submitted successfully.")
@@ -82,8 +88,8 @@ class AutoFillService:
                     print('-----------------------------------------------')
                     print(f"Moving to next page")
                     print('-----------------------------------------------')
+                    time.sleep(1)
             driver.quit()
-            time.sleep(2)
         except WebDriverException as e:
             print(f"Error filling form: {str(e)}")
             driver.quit()
@@ -98,13 +104,12 @@ class AutoFillService:
             print(f"Question: {question['heading']}")
             print('-----------------------------------------------')
             for option in question['options']:
-                time.sleep(0.5)
                 if option['count'] < 1:
                     continue
                 if question['type'] in ["Date", "Short answer", "Paragraph"]:
                     option_element = question['element'].find_element(By.XPATH, option['xpath'])
                     option_element.send_keys(option['value'])
-                    time.sleep(0.3)
+                    time.sleep(0.15)
                     option['count'] -= 1
                     print(f"\t Option: {option['value']}")
                     break
@@ -114,12 +119,12 @@ class AutoFillService:
                         if option['label'] == '__other_option__':
                             print(f"\t Option: {option['value']}")
                             option_element.send_keys(option['value'])
-                            time.sleep(0.3)
+                            time.sleep(0.15)
                             option['count'] -= 1
                             break
                         else:
                             option_element.click()
-                            time.sleep(0.3)
+                            time.sleep(0.15)
                             option['count'] -= 1
                             print(f"\t Option: {option['label']}")
                     else:
@@ -130,21 +135,21 @@ class AutoFillService:
                     if option['label'] == '__other_option__':
                         print(f"\t Option: {option['value']}")
                         option_element.send_keys(option['value'])
-                        time.sleep(0.3)
+                        time.sleep(0.15)
                         option['count'] -= 1
                     else:
                         option_element.click()
-                        time.sleep(0.3)
+                        time.sleep(0.15)
                         print(f"\t Option: {option['label']}")
                         option['count'] -= 1
                     break
                 if question['type'] == "Drop-down":
                     presentation_element = question['element'].find_element(By.XPATH, '''.//div[@role="presentation"]''')
                     presentation_element.click()
-                    time.sleep(0.5)
+                    time.sleep(0.15)
                     option_element = question['element'].find_element(By.XPATH, option['xpath'])
                     option_element.click()
-                    time.sleep(0.3)
+                    time.sleep(0.15)
                     print(f"\t Option: {option['label']}")
                     option['count'] -= 1
                     break
@@ -153,7 +158,7 @@ class AutoFillService:
                         if option['label'].startswith(row):
                             option_element = question['element'].find_element(By.XPATH, option['xpath'])
                             option_element.click()
-                            time.sleep(0.3)
+                            time.sleep(0.15)
                             option['count'] -= 1
                             rows = [r for r in rows if r != row]
                             print(f"\t Option: {option['label']}")
@@ -163,7 +168,7 @@ class AutoFillService:
                     option_element = question['element'].find_element(By.XPATH, option['xpath'])
                     if self._is_enough_options(question, option):
                         option_element.click()
-                        time.sleep(0.3)
+                        time.sleep(0.15)
                         option['count'] -= 1  
                         print(f"\t Option: {option['label']}")
                     else:
